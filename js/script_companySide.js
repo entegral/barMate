@@ -1,6 +1,7 @@
+// Business Logic ------------ Business Logic ------------ Business Logic ------------ Business Logic
+
 function TicketList() {
   this.tickets = [];
-
 };
 
 TicketList.prototype.addTicket = function(ticket) {
@@ -8,18 +9,16 @@ TicketList.prototype.addTicket = function(ticket) {
 };
 
 TicketList.prototype.removeTicket = function(ticket) {
-  // this method should take parameter of "index" that allows removing a ticket at index
   return (this.tickets).splice((this.tickets).indexOf(ticket), 1)[0];
 };
 
 TicketList.prototype.readyTicket = function (ticket) {
-  // this method should take an index, notify user that drink is ready, and then remove it from the list
   var removedTicket = this.removeTicket(ticket);
-// eventually push this ticket to an array of "ready drinks"
   return removedTicket;
 };
 
 TicketList.prototype.modifyTicket = function (newTicket, oldTicket) {
+  //Untested
   var ticketToModify = this.tickets[(this.tickets).indexOf(oldTicket)]
   ticketToModify = newTicket;
 };
@@ -32,8 +31,7 @@ TicketList.prototype.getTicket = function(index) {
   return this.tickets[index];
 };
 
-
-
+// Demonstration Classes ------------ Demonstration Classes ------------ Demonstration Classes ------------ Demonstration Classes
 
 function Ticket(customerName) {
   this.name = customerName;
@@ -54,14 +52,9 @@ function Drink(name, price) {
   this.drinkPrice = price;
 };
 
-
-
-
 // Private UI Logic ------------ Private UI Logic ------------ Private UI Logic ------------ Private UI Logic
 
-function CompanyPage(ticketManager) {
-  this.ticketManager = ticketManager;
-};
+function CompanyPage() {};
 
 CompanyPage.prototype.displayPage = function() {
   $("#companySide").show();
@@ -106,12 +99,13 @@ TicketManager.prototype.modifyTicket = function(newTicket, oldTicket) {
   this.writeTicketList();
 };
 
-//These functions are only called internally or by company side logic
+//This function is only called by company side logic
 TicketManager.prototype.readyTicket = function(ticket) {
   (this.readyTickets).addTicket((this.tickets).readyTicket(ticket));
   this.writeTicketList();
 };
 
+//These functions are only called internally, and should never be called outside of other TicketManager elements
 TicketManager.prototype.clearTicketList = function() {
   $("#ticketList").html("");
   $("#readyList").html("");
@@ -143,17 +137,23 @@ TicketManager.prototype.writeTicketList = function() {
   }
 };
 
-//This is the document ready section
-
+//These are global storage variables, as we currently lack database capabilities
 var ticketManager = new TicketManager()
-var companyPage = new CompanyPage(ticketManager);
+var companyPage = new CompanyPage();
 
+//This is the document ready section
 $(function() {
 
+  //Listener functions
   $("#company").click(function(){
     companyPage.displayPage();
   })
 
+  //On-page-opening setup
+  companyPage.ticketReadyClickListeners();
+  companyPage.ticketRemoveClickListeners();
+
+  //Demonstration Code: Will be removed
   var steve = new Ticket("steve");
   steve.addDrink(new Drink("beer", 4));
   var dan = new Ticket("dan");
@@ -166,14 +166,10 @@ $(function() {
   var tom = new Ticket("tom");
   tom.addDrink(new Drink("beer", 4));
 
-// fake tickets for testing
+  // fake tickets for testing
   ticketManager.addTicket(steve);
   ticketManager.addTicket(dan);
   ticketManager.addTicket(joe);
   ticketManager.addTicket(billy);
   ticketManager.addTicket(tom);
-
-
-  companyPage.ticketReadyClickListeners();
-  companyPage.ticketRemoveClickListeners();
 });
