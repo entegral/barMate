@@ -5,27 +5,18 @@ function Drink (name, price) {
 }
 
 
-Drink.prototype.newOrderCost = function () {
-  var input = document.getElementsByName()
-  cost = 0
-  for (var i = 0; i < input.length; i++) {
-    if (input[i].checked) {
-      cost += parseFloat(input[i].value)
-    }
-  }
-  return cost
-}
 
-
-
-function Order (customerName, customerDateOfBirth) {
-  this.name = customerName,
-  this.dob = customerDateOfBirth,
+function Order (firstName, lastName, dateOfBirth, phoneNumber) {
+  this.firstName = firstName,
+  this.lastName = lastName,
+  this.dateOfBirth = dateOfBirth,
+  this.phoneNumber = phoneNumber,
   this.drinks = [],
   this.totalCost = 0
 }
 
 Order.prototype.addDrink = function (drink) {
+  this.totalCost += drink.price;
   this.drinks.push(drink);
 }
 
@@ -38,9 +29,10 @@ Order.prototype.totalCost = function() {
 }
 
 Order.prototype.removeDrink = function(name) {
-  for (var i =0; i <this.drinks.length; i++) {
-    if this.drinks[i]) {
-      if(this.drinks[i].name = name) {
+  for (var i =0; i < this.drinks.length; i++) {
+    if (this.drinks[i]) {
+      if(this.drinks[i].drinkName === name) {
+        this.totalCost -= this.drinks[i].drinkPrice
         delete this.drinks[i];
         return true;
       }
@@ -49,13 +41,43 @@ Order.prototype.removeDrink = function(name) {
   return false;
 }
 
-var newOrder = new Order ('Chris', 'June 11')
-var newDrink = new Drink('water', 1)
-// var newDrinkTwo = new Drink('beer', 2)
-newOrder.addDrink(newDrink)
-// newOrder.addDrink(newDrinkTwo)
-console.log(newOrder.newOrderCost());
-newOrder.newOrderCost();
 
-// var drinkName = ["beer","wine","soda"]
-// var drinkCost = [1 ,2, 3]
+
+function newOrder() {
+  var inputtedFirstName = $("#first-name").val();
+  var inputtedLastName = $("#last-name").val();
+  var inputtedDob = $("#date-of-birth").val();
+  var inputtedPhoneNumber = $("#phone-number").val();
+  var newCustomer = new Order(inputtedFirstName, inputtedLastName, inputtedDob, inputtedPhoneNumber)
+  return newCustomer;
+}
+
+function interpretDrinks(name, customerOrder){
+  var drinkOption = document.getElementsByName(name)
+  drinkOption.forEach(function(each){
+    customerOrder.drinks.push(newDrink(each))
+  })
+
+}
+
+function newDrink() {
+
+  var drinkName = drinkOption.getAttribute("name")
+  var drinkPrice = drinkOption.getAttribute("price")
+  var drink = new Drink (drinkName, drinkPrice)
+  return drink
+}
+
+
+
+$(document).ready(function() {
+  $("form#form1").submit(function(event){
+    event.preventDefault ();
+    var customerOrder = newOrder()
+    interpretDrinks("beers", customerOrder)
+
+
+    console.log(customerOrder);
+    console.log(customerDrink);
+  })
+})
