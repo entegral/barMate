@@ -167,7 +167,6 @@ $(function() {
   ticketManager.addTicket(joe);
   ticketManager.addTicket(billy);
   ticketManager.addTicket(tom);
-  // ticketManager.writeTicketList();
 
 
   companyPage.ticketReadyClickListeners();
