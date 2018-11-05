@@ -4,9 +4,7 @@ function TicketList() {
 };
 
 TicketList.prototype.addTicket = function(ticket) {
-  // console.log(ticket);
   this.tickets.push(ticket);
-  // console.log(this.tickets);
 };
 
 TicketList.prototype.removeTicket = function(ticket) {
@@ -14,11 +12,11 @@ TicketList.prototype.removeTicket = function(ticket) {
   return (this.tickets).splice((this.tickets).indexOf(ticket), 1)[0];
 };
 
-TicketList.prototype.ticketReady = function (ticket) {
+TicketList.prototype.readyTicket = function (ticket) {
   // this method should take an index, notify user that drink is ready, and then remove it from the list
   var removedTicket = this.removeTicket(ticket);
 // eventually push this ticket to an array of "ready drinks"
-  console.log(removedTicket);
+  return removedTicket;
 };
 
 TicketList.prototype.modifyTicket = function (newTicket, oldTicket) {
@@ -70,10 +68,16 @@ CompanyPage.prototype.displayPage = function() {
 };
 
 CompanyPage.prototype.ticketReadyClickListeners = function() {
-  $("#ticketList").on("click", "button", function() {
-    var ticketIndex = parseInt((this.id).slice(6,7));
-    console.log(ticketIndex);
+  $("#ticketList").on("click", "button.readyButton", function() {
+    var ticketIndex = parseInt((this.id).slice(5,6));
     ticketManager.readyTicket((ticketManager.tickets).getTicket(ticketIndex));
+  })
+};
+
+CompanyPage.prototype.ticketRemoveClickListeners = function() {
+  $("#ticketList").on("click", "button.removeButton", function() {
+    var ticketIndex = parseInt((this.id).slice(6,7));
+    ticketManager.removeTicket((ticketManager.tickets).getTicket(ticketIndex));
   })
 };
 
@@ -82,6 +86,7 @@ CompanyPage.prototype.ticketReadyClickListeners = function() {
 
 function TicketManager() {
   this.tickets = new TicketList();
+  this.readyTickets = new TicketList();
 };
 
 //These functions are called by the customer side logic
@@ -102,12 +107,13 @@ TicketManager.prototype.modifyTicket = function(newTicket, oldTicket) {
 
 //These functions are only called internally or by company side logic
 TicketManager.prototype.readyTicket = function(ticket) {
-  (this.tickets).ticketReady(ticket);
+  (this.readyTickets).addTicket((this.tickets).readyTicket(ticket));
   this.writeTicketList();
 };
 
 TicketManager.prototype.clearTicketList = function() {
   $("#ticketList").html("");
+  $("#readyList").html("");
 };
 
 TicketManager.prototype.writeTicketList = function() {
@@ -115,13 +121,24 @@ TicketManager.prototype.writeTicketList = function() {
   for(var i = 0; i < (this.tickets).getTicketNumber(); i++) {
     var ticket = (this.tickets).getTicket(i);
     var ticketDetails = "";
-    ticketDetails += "<li>Order for " + ticket.name + "<button type='button' id='ticket" + i + "Button'>Order Ready</button><ul>";
+    ticketDetails += "<li>Order for " + ticket.name + "<button type='button' class='readyButton' id='ready" + i + "Button'>Order Ready</button><button type='button' class='removeButton' id='remove" + i + "Button'>Remove Order</button><ul>";
     for(var j = 0; j < (ticket.drinks).length; j++) {
       var drink = (ticket.drinks)[j];
       ticketDetails += "<li>Drink: " + drink.drinkName + " Price: $" + drink.drinkPrice + "</li>";
     }
     ticketDetails += "</ul></li>"
     $("#ticketList").append(ticketDetails);
+  }
+  for(var i = 0; i < (this.readyTickets).getTicketNumber(); i++) {
+    var readyTicket = (this.readyTickets).getTicket(i);
+    var ticketDetails = "";
+    ticketDetails += "<li>Order for " + readyTicket.name + "!<ul>";
+    for(var j = 0; j < (readyTicket.drinks).length; j++) {
+      var drink = (readyTicket.drinks)[j];
+      ticketDetails += "<li>" + drink.drinkName + "</li>";
+    }
+    ticketDetails += "</ul></li>"
+    $("#readyList").append(ticketDetails);
   }
 };
 
@@ -154,4 +171,5 @@ $(function() {
 
 
   companyPage.ticketReadyClickListeners();
+  companyPage.ticketRemoveClickListeners();
 });
