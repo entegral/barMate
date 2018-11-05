@@ -11,20 +11,49 @@
   <body>
     <div class="container">
 
-      <div class="row" id="customerUi">
+      <div class="jumbotron">
+        <h3>barMates</h3>
+        <p>v0.5</p>
+      </div>
+
+      <div class="row" id="selection">
+        <div class="offset-md-4 col-md-4">
+          <h4>Which are you?</h4>
+          <button id="customer" class="btn btn-info" type="button" name="button">Customer</button>
+          <button id="company" class="btn btn-info" type="button" name="button">Bartender</button>
+        </div>
+      </div>
+
+
+
+      <div class="row" id="customerSide">
 
       </div>
 
       <div class="row" id="companySide">
-        <div class="col-sm-6">
-          <h4>Here are the outstanding tickets:</h4>
-          <ol id="ticketList"></ol>
+        <div class="row">
+
+        <div class="col-6" id="outstandingTickets">
+
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Here are the outstanding tickets:</h4>
+              <ol class="card-text" id="ticketList"></ol>
+            </div>
+          </div>
+
         </div>
-        <div class="col-sm-6">
-          <h4>Your order is ready!  Please come to the bar!</h4>
-          <ol id="readyList"></ol>
+
+        <div class="col-6" id="completedTickets">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Your order is ready!  Please come to the bar!</h4>
+              <ol class="card-text" id="readyList"></ol>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
 
     </div>
   </body>

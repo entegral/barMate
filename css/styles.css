@@ -1,0 +1,33 @@
+
+
+#companySide {
+  display: none;
+}
+
+#customerSide {
+  display: none;
+}
+
+#selection {
+  text-align: center;
+}
+
+.jumbotron {
+   text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+}
+
+.lineItem {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  background-color: lightgrey;
+}

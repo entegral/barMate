@@ -65,6 +65,7 @@ function CompanyPage(ticketManager) {
 
 CompanyPage.prototype.displayPage = function() {
   $("#companySide").show();
+  $("#selection").hide();
 };
 
 CompanyPage.prototype.ticketReadyClickListeners = function() {
@@ -121,18 +122,18 @@ TicketManager.prototype.writeTicketList = function() {
   for(var i = 0; i < (this.tickets).getTicketNumber(); i++) {
     var ticket = (this.tickets).getTicket(i);
     var ticketDetails = "";
-    ticketDetails += "<li>Order for " + ticket.name + "<button type='button' class='readyButton' id='ready" + i + "Button'>Order Ready</button><button type='button' class='removeButton' id='remove" + i + "Button'>Remove Order</button><ul>";
+    ticketDetails += "<li class='lineItem'>Order for " + ticket.name + ": <br><ul>";
     for(var j = 0; j < (ticket.drinks).length; j++) {
       var drink = (ticket.drinks)[j];
       ticketDetails += "<li>Drink: " + drink.drinkName + " Price: $" + drink.drinkPrice + "</li>";
     }
-    ticketDetails += "</ul></li>"
+    ticketDetails += "</ul><button type='button' class='readyButton btn  center btn-sm btn-info' id='ready" + i + "Button'>Order Ready</button><button type='button' class='removeButton center btn btn-sm btn-danger' id='remove" + i + "Button'>Remove Order</button></li>"
     $("#ticketList").append(ticketDetails);
   }
   for(var i = 0; i < (this.readyTickets).getTicketNumber(); i++) {
     var readyTicket = (this.readyTickets).getTicket(i);
     var ticketDetails = "";
-    ticketDetails += "<li>Order for " + readyTicket.name + "!<ul>";
+    ticketDetails += "<li class='lineItem'>Order for " + readyTicket.name + "!<ul>";
     for(var j = 0; j < (readyTicket.drinks).length; j++) {
       var drink = (readyTicket.drinks)[j];
       ticketDetails += "<li>" + drink.drinkName + "</li>";
@@ -148,6 +149,10 @@ var ticketManager = new TicketManager()
 var companyPage = new CompanyPage(ticketManager);
 
 $(function() {
+
+  $("#company").click(function(){
+    companyPage.displayPage();
+  })
 
   var steve = new Ticket("steve");
   steve.addDrink(new Drink("beer", 4));
