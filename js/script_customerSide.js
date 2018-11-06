@@ -1,9 +1,7 @@
-
 function Drink (name, price) {
   this.drinkName = name,
   this.drinkPrice = price
 }
-
 
 function Order () {
   this.firstName = "",
@@ -14,13 +12,11 @@ function Order () {
   this.totalCost = 0
 }
 
-
 Order.prototype.addDrink = function (drink) {
   this.totalCost += drink.drinkPrice;
   this.drinks.push(drink);
   this.updateTab();
 }
-
 
 Order.prototype.removeDrink = function(name) {
   for (var i =0; i < this.drinks.length; i++) {
@@ -36,7 +32,6 @@ Order.prototype.removeDrink = function(name) {
   return false;
 }
 
-
 Order.prototype.clone = function (){
   var newOrder = new Order();
   newOrder.firstName = this.firstName;
@@ -48,14 +43,12 @@ Order.prototype.clone = function (){
   return newOrder;
 }
 
-
 Order.prototype.updateInfo = function () {
   this.firstName = $("#first-name").val();
   this.lastName = $("#last-name").val();
   this.dateOfBirth= $("#date-of-birth").val();
   this.phoneNumber = $("#phone-number").val();
 }
-
 
 function interpretDrinks() {
   var input = $('input[name="beers"]:checked');
@@ -66,14 +59,12 @@ function interpretDrinks() {
   }
 }
 
-
 function addSwitchListener() {
-  $(".jumbotron").on("click", "h3", function() {
+  $(".video-wrapper").on("click", function() {
     $("#customerSide").toggle();
     $("#companySide").toggle();
   });
 };
-
 
 function addTabRemoveListener () {
   $("#currentTab").on("click", ".removeDrink", function() {
@@ -81,7 +72,6 @@ function addTabRemoveListener () {
     customerOrder.removeDrink(drinkName);
   })
 }
-
 
 Order.prototype.clearOrder = function() {
   this.firstName = "",
@@ -93,23 +83,35 @@ Order.prototype.clearOrder = function() {
   this.clearCurrentTab();
 }
 
-
 Order.prototype.clearCurrentTab = function () {
   $("#currentTab").html("");
 };
 
-
 Order.prototype.updateTab = function () {
   var output = "<ul>"
-
   this.drinks.forEach(function(drink){
-    output += "<li class='tabLineItem'>" + drink.drinkName + "</li>"
-    output += "<button type='button' class='" + drink.drinkName + " removeDrink btn center btn-sm btn-danger'>Remove From Tab</button>"
+    output += "<li class='tabLineItem'>" + drink.drinkName + "<br>"
+    output += "<button type='button' class='" + drink.drinkName + " removeDrink btn center btn-sm btn-danger'>Remove From Tab</button></li>"
   })
   output += "</ul>"
+  output += "<p>Your total is: $" + this.totalCost + "</p>";
   $("#currentTab").html(output);
 };
 
+function resetBoxes() {
+  $(".form-check-input").prop("checked", false);
+  var expandedCards = document.getElementsByClassName("overlayColor");
+  var paragraph = $(expandedCards).find("p");
+  paragraph.slideUp();
+  $(expandedCards).removeClass("overlayColor");
+};
+
+function resetNameField() {
+  $("#first-name").val("");
+  $("#last-name").val("");
+  $("#phone-number").val("");
+  $("#date-of-birth").val("");
+};
 
 var customerOrder = new Order()
 
@@ -123,10 +125,21 @@ $(document).ready(function() {
   $("form#form1").submit(function(event){
     event.preventDefault ();
     interpretDrinks();
-    customerOrder.updateInfo();
+    if(customerOrder.firstName === "" || customerOrder.lastName === "") {
+      customerOrder.updateInfo();
+    }
+    resetBoxes();
   });
   $("#submitOrderButton").click(function() {
     ticketManager.addTicket(customerOrder.clone());
     customerOrder.clearOrder();
+    resetNameField();
+  });
+  $(".drinkCard").on("click", function(e){
+    e.stopPropagation();
+    var checkbox = $(this).find('input[type="checkbox"]');
+    checkbox.prop('checked', !checkbox.prop('checked'));
+    $(this).toggleClass("overlayColor")
+    $(this).find("p").slideToggle();
   });
 });

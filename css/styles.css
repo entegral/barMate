@@ -1,3 +1,7 @@
+body {
+  background-color: #eee;
+}
+
 #companySide {
   display: none;
 }
@@ -22,6 +26,7 @@ button {
   margin: 5px;
 }
 
+
 .lineItem {
   border: 1px solid lightgrey;
   border-radius: 5px;
@@ -34,20 +39,65 @@ input {
   margin: 15px;
 }
 
-<<<<<<< HEAD
-#customerUi {
+.removeButton {
+  font-size: 12px;
+}
+/*
+//////////////////////////
+//                      //
+//                      //
+//    CSS Styling By    //
+//        Chris         //
+//                      //
+////////////////////////// */
+video {
+  display: inline-block;
+  vertical-align: baseline;
+  object-fit: contain;
+}
+.video-wrapper video {
+  width: 100%;
+  z-index: -100;
+  background: no-repeat;
+  background-size: cover;
+  transition: ;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+  }
+
+
+* {
+  box-sizing: border-box;
+}
+
+.video-wrapper {
+  position: relative;
+  max-width: 1600px;
+  margin: 0 auto 45px;
+}
+.video-wrapper h3 {
+  color: black;
+  position: absolute;
+  top: 42%;
+  font-size: 60px;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
+.drinkCard div div p {
   display: none;
-=======
-card {
-  margin: 18rem;
 }
 
-/* .card-text {
-  display: none; */
+.drinkCard {
+  margin: 10px;
+  border: none;
 }
 
-carousel {
-  height: 500px;
-  border: black;
->>>>>>> 1dd30972a4ddafe723da8056019cef47568c533c
+.overlayColor {
+  background: rgba(75,200,75,0.52);
+  z-index: 2;
+  overflow: hidden;
 }
