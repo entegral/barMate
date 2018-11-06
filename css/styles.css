@@ -29,3 +29,11 @@ button {
   margin: 10px;
   background-color: lightgrey;
 }
+
+input {
+  margin: 15px;
+}
+
+#customerUi {
+  display: none;
+}
