@@ -107,6 +107,7 @@ Order.prototype.updateTab = function () {
     output += "<button type='button' class='" + drink.drinkName + " removeDrink btn center btn-sm btn-danger'>Remove From Tab</button></li>"
   })
   output += "</ul>"
+  output += "<p>Your total is: $" + this.totalCost + "</p>";
   $("#currentTab").html(output);
 };
 
