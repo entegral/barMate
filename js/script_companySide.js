@@ -33,24 +33,24 @@ TicketList.prototype.getTicket = function(index) {
 
 // Demonstration Classes ------------ Demonstration Classes ------------ Demonstration Classes ------------ Demonstration Classes
 
-function Ticket(customerName) {
-  this.name = customerName;
-  this.creditCard = "";
-  this.drinkAddress = "";
-  this.drinks = [];
-  this.price = 0;
-};
-
-Ticket.prototype.addDrink = function (drink) {
-  this.drinks.push(drink);
-  this.drinkPrice += drink.drinkPrice;
-};
-
-
-function Drink(name, price) {
-  this.drinkName = name;
-  this.drinkPrice = price;
-};
+// function Ticket(customerName) {
+//   this.name = customerName;
+//   this.creditCard = "";
+//   this.drinkAddress = "";
+//   this.drinks = [];
+//   this.price = 0;
+// };
+//
+// Ticket.prototype.addDrink = function (drink) {
+//   this.drinks.push(drink);
+//   this.drinkPrice += drink.drinkPrice;
+// };
+//
+//
+// function Drink(name, price) {
+//   this.drinkName = name;
+//   this.drinkPrice = price;
+// };
 
 // Private UI Logic ------------ Private UI Logic ------------ Private UI Logic ------------ Private UI Logic
 
@@ -117,7 +117,7 @@ TicketManager.prototype.writeTicketList = function() {
   for(var i = 0; i < (this.tickets).getTicketNumber(); i++) {
     var ticket = (this.tickets).getTicket(i);
     var ticketDetails = "";
-    ticketDetails += "<li class='lineItem'>Order for " + ticket.name + ": <br><ul>";
+    ticketDetails += "<li class='lineItem'>Order for " + ticket.firstName + " " + ticket.lastName + ": <br><ul>";
     for(var j = 0; j < (ticket.drinks).length; j++) {
       var drink = (ticket.drinks)[j];
       ticketDetails += "<li>Drink: " + drink.drinkName + " Price: $" + drink.drinkPrice + "</li>";
@@ -128,7 +128,7 @@ TicketManager.prototype.writeTicketList = function() {
   for(var i = 0; i < (this.readyTickets).getTicketNumber(); i++) {
     var readyTicket = (this.readyTickets).getTicket(i);
     var ticketDetails = "";
-    ticketDetails += "<li class='lineItem'>Order for " + readyTicket.name + "!<ul>";
+    ticketDetails += "<li class='lineItem'>Order for " + readyTicket.firstName + " " + readyTicket.lastName + "!<ul>";
     for(var j = 0; j < (readyTicket.drinks).length; j++) {
       var drink = (readyTicket.drinks)[j];
       ticketDetails += "<li>" + drink.drinkName + "</li>";
@@ -155,22 +155,22 @@ $(function() {
   companyPage.ticketRemoveClickListeners();
 
   //Demonstration Code: Will be removed
-  var steve = new Ticket("steve");
-  steve.addDrink(new Drink("beer", 4));
-  var dan = new Ticket("dan");
-  dan.addDrink(new Drink("beer", 4));
-  dan.addDrink(new Drink("cocktail", 7));
-  var joe = new Ticket("joe");
-  joe.addDrink(new Drink("cocktail", 6));
-  var billy = new Ticket("billy");
-  billy.addDrink(new Drink("whiskey", 6));
-  var tom = new Ticket("tom");
-  tom.addDrink(new Drink("beer", 4));
+  // var steve = new Ticket("steve");
+  // steve.addDrink(new Drink("beer", 4));
+  // var dan = new Ticket("dan");
+  // dan.addDrink(new Drink("beer", 4));
+  // dan.addDrink(new Drink("cocktail", 7));
+  // var joe = new Ticket("joe");
+  // joe.addDrink(new Drink("cocktail", 6));
+  // var billy = new Ticket("billy");
+  // billy.addDrink(new Drink("whiskey", 6));
+  // var tom = new Ticket("tom");
+  // tom.addDrink(new Drink("beer", 4));
 
   // fake tickets for testing
-  ticketManager.addTicket(steve);
-  ticketManager.addTicket(dan);
-  ticketManager.addTicket(joe);
-  ticketManager.addTicket(billy);
-  ticketManager.addTicket(tom);
+  // ticketManager.addTicket(steve);
+  // ticketManager.addTicket(dan);
+  // ticketManager.addTicket(joe);
+  // ticketManager.addTicket(billy);
+  // ticketManager.addTicket(tom);
 });

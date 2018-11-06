@@ -37,7 +37,16 @@ Order.prototype.removeDrink = function(name) {
   return false;
 }
 
-
+Order.prototype.clone = function (){
+  var newOrder = new Order();
+  newOrder.firstName = this.firstName;
+  newOrder.lastName = this.lastName;
+  newOrder.dateOfBirth = this.dateOfBirth;
+  newOrder.phoneNumber = this.phoneNumber;
+  newOrder.drinks = newOrder.drinks.concat(this.drinks);
+  newOrder.totalCost = this.totalCost;
+  return newOrder;
+}
 
 Order.prototype.updateInfo = function () {
   this.firstName = $("#first-name").val();
@@ -71,9 +80,19 @@ function addTabRemoveListener () {
   })
 }
 
+Order.prototype.clearOrder = function() {
+  this.firstName = "",
+  this.lastName = "",
+  this.dateOfBirth = "",
+  this.phoneNumber = "",
+  this.drinks = [],
+  this.totalCost = 0
+  this.clearCurrentTab();
+}
+
 
 Order.prototype.clearCurrentTab = function () {
-  $("#currentTab").html("")
+  $("#currentTab").html("");
 };
 
 Order.prototype.updateTab = function () {
@@ -101,5 +120,9 @@ $(document).ready(function() {
     interpretDrinks();
     customerOrder.updateInfo();
     console.log(customerOrder);
-  })
+  });
+  $("#submitOrderButton").click(function() {
+    ticketManager.addTicket(customerOrder.clone());
+    customerOrder.clearOrder();
+  });
 });
