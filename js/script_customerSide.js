@@ -112,14 +112,18 @@ Order.prototype.updateTab = function () {
 
 function resetBoxes() {
   $(".form-check-input").prop("checked", false);
-}
+  var expandedCards = document.getElementsByClassName("overlayColor");
+  var paragraph = $(expandedCards).find("p");
+  paragraph.slideUp();
+  $(expandedCards).removeClass("overlayColor");
+};
 
 function resetNameField() {
   $("#first-name").val("");
   $("#last-name").val("");
   $("#phone-number").val("");
   $("#date-of-birth").val("");
-}
+};
 
 var customerOrder = new Order()
 
