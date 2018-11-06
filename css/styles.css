@@ -72,20 +72,8 @@ video {
     transition-duration: 1s;
     transition-timing-function: ease;
     transition-delay: 0s;
-.drinkCard div div p {
-  display: none;
-}
+  }
 
-.drinkCard {
-  margin: 10px;
-  border: none;
-}
-
-.overlayColor {
-  background: rgba(75,200,75,0.52);
-  z-index: 2;
- overflow: hidden;
-}
 
 * {
   box-sizing: border-box;
@@ -104,4 +92,19 @@ video {
   text-align: center;
   left: 0;
   right: 0;
+}
+
+.drinkCard div div p {
+  display: none;
+}
+
+.drinkCard {
+  margin: 10px;
+  border: none;
+}
+
+.overlayColor {
+  background: rgba(75,200,75,0.52);
+  z-index: 2;
+  overflow: hidden;
 }
