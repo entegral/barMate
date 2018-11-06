@@ -21,13 +21,6 @@ Order.prototype.addDrink = function (drink) {
   this.drinks.push(drink);
 }
 
-Order.prototype.totalCost = function() {
-  var totalCost = 0;
-  this.drinks.forEach(function(drink) {
-    totalCost += drink.cost;
-  });
-  this.totalCost = totalCost;
-}
 
 Order.prototype.removeDrink = function(name) {
   for (var i =0; i < this.drinks.length; i++) {
