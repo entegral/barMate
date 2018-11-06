@@ -68,7 +68,7 @@ function interpretDrinks() {
 
 
 function addSwitchListener() {
-  $(".jumbotron").on("click", "h3", function() {
+  $(".video-wrapper").on("click", function() {
     $("#customerSide").toggle();
     $("#companySide").toggle();
   });
