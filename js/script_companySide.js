@@ -1,26 +1,21 @@
 // Business Logic ------------ Business Logic ------------ Business Logic ------------ Business Logic
 
-
 function TicketList() {
   this.tickets = [];
 };
-
 
 TicketList.prototype.addTicket = function(ticket) {
   this.tickets.push(ticket);
 };
 
-
 TicketList.prototype.removeTicket = function(ticket) {
   return (this.tickets).splice((this.tickets).indexOf(ticket), 1)[0];
 };
-
 
 TicketList.prototype.readyTicket = function (ticket) {
   var removedTicket = this.removeTicket(ticket);
   return removedTicket;
 };
-
 
 TicketList.prototype.modifyTicket = function (newTicket, oldTicket) {
   //Untested
@@ -28,11 +23,9 @@ TicketList.prototype.modifyTicket = function (newTicket, oldTicket) {
   ticketToModify = newTicket;
 };
 
-
 TicketList.prototype.getTicketNumber = function() {
   return (this.tickets).length;
 };
-
 
 TicketList.prototype.getTicket = function(index) {
   return this.tickets[index];
@@ -48,14 +41,12 @@ CompanyPage.prototype.displayPage = function() {
   addSwitchListener();
 };
 
-
 CompanyPage.prototype.ticketReadyClickListeners = function() {
   $("#ticketList").on("click", "button.readyButton", function() {
     var ticketIndex = parseInt((this.id).slice(5,6));
     ticketManager.readyTicket((ticketManager.tickets).getTicket(ticketIndex));
   })
 };
-
 
 CompanyPage.prototype.ticketRemoveClickListeners = function() {
   $("#ticketList").on("click", "button.removeButton", function() {
@@ -64,48 +55,37 @@ CompanyPage.prototype.ticketRemoveClickListeners = function() {
   })
 };
 
-
 // Public UI Logic ------------ Public UI Logic ------------ Public UI Logic ------------ Public UI Logic
-
 
 function TicketManager() {
   this.tickets = new TicketList();
   this.readyTickets = new TicketList();
 };
 
-
-//These functions are called by the customer side logic
 TicketManager.prototype.addTicket = function(ticket) {
   (this.tickets).addTicket(ticket);
   this.writeTicketList();
 };
-
 
 TicketManager.prototype.removeTicket = function(ticket) {
   (this.tickets).removeTicket(ticket);
   this.writeTicketList();
 };
 
-
 TicketManager.prototype.modifyTicket = function(newTicket, oldTicket) {
   (this.tickets).modifyTicket(newTicket, oldTicket);
   this.writeTicketList();
 };
 
-
-//This function is only called by company side logic
 TicketManager.prototype.readyTicket = function(ticket) {
   (this.readyTickets).addTicket((this.tickets).readyTicket(ticket));
   this.writeTicketList();
 };
 
-
-//These functions are only called internally, and should never be called outside of other TicketManager elements
 TicketManager.prototype.clearTicketLists = function() {
   $("#ticketList").html("");
   $("#readyList").html("");
 };
-
 
 TicketManager.prototype.writeTicketList = function() {
   this.clearTicketLists();
@@ -133,20 +113,15 @@ TicketManager.prototype.writeTicketList = function() {
   }
 };
 
-
-//These are global storage variables, as we currently lack database capabilities
 var ticketManager = new TicketManager()
 var companyPage = new CompanyPage();
 
-//This is the document ready section
 $(function() {
 
-  //Listener functions
   $("#company").click(function(){
     companyPage.displayPage();
   })
 
-  //On-page-opening setup
   companyPage.ticketReadyClickListeners();
   companyPage.ticketRemoveClickListeners();
 
