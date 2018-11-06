@@ -34,6 +34,20 @@ input {
   margin: 15px;
 }
 
+<<<<<<< HEAD
 #customerUi {
   display: none;
+=======
+card {
+  margin: 18rem;
+}
+
+/* .card-text {
+  display: none; */
+}
+
+carousel {
+  height: 500px;
+  border: black;
+>>>>>>> 1dd30972a4ddafe723da8056019cef47568c533c
 }
