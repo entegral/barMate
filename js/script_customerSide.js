@@ -110,6 +110,16 @@ Order.prototype.updateTab = function () {
   $("#currentTab").html(output);
 };
 
+function resetBoxes() {
+  $(".form-check-input").prop("checked", false);
+}
+
+function resetNameField() {
+  $("#first-name").val("");
+  $("#last-name").val("");
+  $("#phone-number").val("");
+  $("#date-of-birth").val("");
+}
 
 var customerOrder = new Order()
 
@@ -123,10 +133,14 @@ $(document).ready(function() {
   $("form#form1").submit(function(event){
     event.preventDefault ();
     interpretDrinks();
-    customerOrder.updateInfo();
+    if(customerOrder.firstName === "" || customerOrder.lastName === "") {
+      customerOrder.updateInfo();
+    }
+    resetBoxes();
   });
   $("#submitOrderButton").click(function() {
     ticketManager.addTicket(customerOrder.clone());
     customerOrder.clearOrder();
+    resetNameField();
   });
 });
