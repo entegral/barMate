@@ -14,8 +14,8 @@ body {
   text-align: center;
 }
 
-.jumbotron {
-   text-align: center;
+#version {
+  font-size: .5em;
 }
 
 .center {
