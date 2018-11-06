@@ -59,6 +59,7 @@ function CompanyPage() {};
 CompanyPage.prototype.displayPage = function() {
   $("#companySide").show();
   $("#selection").hide();
+  addSwitchListener();
 };
 
 CompanyPage.prototype.ticketReadyClickListeners = function() {

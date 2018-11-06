@@ -55,6 +55,12 @@ function interpretDrinks() {
   }
 }
 
+function addSwitchListener() {
+  $(".jumbotron").on("click", "h3", function() {
+    $("#customerSide").toggle();
+    $("#companySide").toggle();
+  });
+};
 
 var customerOrder = new Order()
 
@@ -62,6 +68,7 @@ $(document).ready(function() {
   $("#customer").click(function(){
     $("#customerSide").show();
     $("#selection").hide();
+    addSwitchListener();
   });
 
   $("form#form1").submit(function(event){
