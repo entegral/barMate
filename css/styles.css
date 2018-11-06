@@ -51,3 +51,46 @@ carousel {
   border: black;
 >>>>>>> 1dd30972a4ddafe723da8056019cef47568c533c
 }
+/*
+//////////////////////////
+//                      //
+//                      //
+//    CSS Styling By    //
+//        Chris         //
+//                      //
+////////////////////////// */
+video {
+  display: inline-block;
+  vertical-align: baseline;
+  object-fit: contain;
+}
+.video-wrapper video {
+  width: 100%;
+  z-index: -100;
+  background: no-repeat;
+  background-size: cover;
+  transition: ;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.video-wrapper {
+  position: relative;
+  max-width: 1600px;
+  margin: 0 auto 45px;
+}
+.video-wrapper h3 {
+  color: black;
+  position: absolute;
+  top: 42%;
+  font-size: 60px;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
