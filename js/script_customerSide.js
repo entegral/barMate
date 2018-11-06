@@ -16,7 +16,6 @@ function Order () {
 
 
 Order.prototype.addDrink = function (drink) {
-  console.log("add drink" + drink.drinkPrice);
   this.totalCost += drink.drinkPrice;
   this.drinks.push(drink);
   this.updateTab();
@@ -63,7 +62,6 @@ function interpretDrinks() {
   for (var i = 0; i < input.length; i++) {
     if (input[i].checked) {
       customerOrder.addDrink(new Drink(input[i].dataset.value2, parseFloat(input[i].value)))
-      console.log(input[i].value);
     }
   }
 }
@@ -126,7 +124,6 @@ $(document).ready(function() {
     event.preventDefault ();
     interpretDrinks();
     customerOrder.updateInfo();
-    console.log(customerOrder);
   });
   $("#submitOrderButton").click(function() {
     ticketManager.addTicket(customerOrder.clone());
