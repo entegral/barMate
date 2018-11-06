@@ -1,3 +1,16 @@
 input {
   margin: 15px;
 }
+
+card {
+  margin: 18rem;
+}
+
+/* .card-text {
+  display: none; */
+}
+
+carousel {
+  height: 500px;
+  border: black;
+}
