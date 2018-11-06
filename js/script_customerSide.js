@@ -5,7 +5,6 @@ function Drink (name, price) {
 }
 
 
-
 function Order () {
   this.firstName = "",
   this.lastName = "",
@@ -14,6 +13,7 @@ function Order () {
   this.drinks = [],
   this.totalCost = 0
 }
+
 
 Order.prototype.addDrink = function (drink) {
   console.log("add drink" + drink.drinkPrice);
@@ -37,6 +37,7 @@ Order.prototype.removeDrink = function(name) {
   return false;
 }
 
+
 Order.prototype.clone = function (){
   var newOrder = new Order();
   newOrder.firstName = this.firstName;
@@ -47,6 +48,7 @@ Order.prototype.clone = function (){
   newOrder.totalCost = this.totalCost;
   return newOrder;
 }
+
 
 Order.prototype.updateInfo = function () {
   this.firstName = $("#first-name").val();
@@ -66,6 +68,7 @@ function interpretDrinks() {
   }
 }
 
+
 function addSwitchListener() {
   $(".jumbotron").on("click", "h3", function() {
     $("#customerSide").toggle();
@@ -73,12 +76,14 @@ function addSwitchListener() {
   });
 };
 
+
 function addTabRemoveListener () {
   $("#currentTab").on("click", ".removeDrink", function() {
     var drinkName = (this.classList)[0];
     customerOrder.removeDrink(drinkName);
   })
 }
+
 
 Order.prototype.clearOrder = function() {
   this.firstName = "",
@@ -95,6 +100,7 @@ Order.prototype.clearCurrentTab = function () {
   $("#currentTab").html("");
 };
 
+
 Order.prototype.updateTab = function () {
   var output = "<ul>"
 
@@ -105,6 +111,7 @@ Order.prototype.updateTab = function () {
   output += "</ul>"
   $("#currentTab").html(output);
 };
+
 
 var customerOrder = new Order()
 
