@@ -1,10 +1,10 @@
-# _[title]_
+# _barMate_
 
-#### By _**Robert Bruce**_
+#### By _**Robert Bruce, Rohan Moore, Ngan Nguyen, Chris Rudnicky**_
 
 ## Description
 
-_[description]_
+_An app to help people place orders and help businesses maintain an efficient workflow._
 
 ## Setup/Installation Requirements
 
@@ -17,4 +17,4 @@ _[description]_
 _GitHub, HTML, CSS, Bootstrap, Javascript, JQuery_
 
 ### License
-Copyright (c) 2018 **_RB_** MIT license.
+Copyright (c) 2018 **_RB RM NN CR_** GNU General Public License 3.0
