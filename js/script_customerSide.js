@@ -103,8 +103,8 @@ Order.prototype.updateTab = function () {
   var output = "<ul>"
 
   this.drinks.forEach(function(drink){
-    output += "<li class='tabLineItem'>" + drink.drinkName + "</li>"
-    output += "<button type='button' class='" + drink.drinkName + " removeDrink btn center btn-sm btn-danger'>Remove From Tab</button>"
+    output += "<li class='tabLineItem'>" + drink.drinkName + "<br>"
+    output += "<button type='button' class='" + drink.drinkName + " removeDrink btn center btn-sm btn-danger'>Remove From Tab</button></li>"
   })
   output += "</ul>"
   $("#currentTab").html(output);
