@@ -67,7 +67,7 @@ var customerOrder = new Order()
 
 $(document).ready(function() {
   $("#customer").click(function(){
-    $("#customerUi").show();
+    $("#customerSide").show();
     $("#selection").hide();
   });
 
