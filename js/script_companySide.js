@@ -106,13 +106,13 @@ TicketManager.prototype.readyTicket = function(ticket) {
 };
 
 //These functions are only called internally, and should never be called outside of other TicketManager elements
-TicketManager.prototype.clearTicketList = function() {
+TicketManager.prototype.clearTicketLists = function() {
   $("#ticketList").html("");
   $("#readyList").html("");
 };
 
 TicketManager.prototype.writeTicketList = function() {
-  this.clearTicketList();
+  this.clearTicketLists();
   for(var i = 0; i < (this.tickets).getTicketNumber(); i++) {
     var ticket = (this.tickets).getTicket(i);
     var ticketDetails = "";

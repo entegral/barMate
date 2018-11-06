@@ -29,7 +29,7 @@ Expected Output: order = {name, age, phone number, price, drinkArray}
 
 - [x] add drinks to order
 ````
-Input: order.addDrink(new Drink)
+Input: oryder.addDrink(new Drink)
 Expected Output: Order.drinkArray = [Drink]
 ````
 
@@ -59,7 +59,7 @@ Expected Output: ticketList.tickets = []
 
 - [x] Signal when order is ready
 ````
-Input: ticketlist.readyTicket(order)
+Input: ticketList.readyTicket(order)
 Expected Output: readyList.tickets = [order]
 ````
 
@@ -71,7 +71,7 @@ Expected Output: ticketManager = {TicketList, TicketList}
 
 - [x] Add functions to modify pending tickets in accordance with previous specs
 ````
-Input: ticketlist.readyTicket(order), ticketList.addOrder(order), ticketList.addOrder(order)
+Input: ticketManager.readyTicket(order), ticketManager.addOrder(order), ticketManager.addOrder(order)
 Expected Output: readyList.tickets = [order], ticketList.tickets = [order], ticketList.tickets = []
 ````
 
@@ -80,6 +80,26 @@ Expected Output: readyList.tickets = [order], ticketList.tickets = [order], tick
 Input: ticketManager.writeTicketList()
 Expected Output: lists of pending and ready orders in the HTML
 ````
+
+- [ ] everytime page content is generated, clear previous html contents first
+````
+Input:  TicketManager.clearTicketLists
+Expected Output: $("#ticketList").html(""); $("#readyList").html("");
+````
+
+- [ ] provide button to move an order from pending list to ready list
+````
+Input:  a ready button of an order is clicked
+Expected Output: move object from pending list to ready list
+````
+
+
+- [ ] provide button to remove an order from pending list
+````
+Input:  a remove button of an order is clicked
+Expected Output: remove object from pending list  
+````
+
 
 ## Technologies Used
 _GitHub, HTML, CSS, Bootstrap, Javascript, JQuery_
