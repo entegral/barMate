@@ -39,6 +39,39 @@ input {
   margin: 15px;
 }
 
+/* .tabLineItem {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: lightgrey;
+} */
+
+.removeButton {
+  font-size: 12px;
+}
+/*
+//////////////////////////
+//                      //
+//                      //
+//    CSS Styling By    //
+//        Chris         //
+//                      //
+////////////////////////// */
+video {
+  display: inline-block;
+  vertical-align: baseline;
+  object-fit: contain;
+}
+.video-wrapper video {
+  width: 100%;
+  z-index: -100;
+  background: no-repeat;
+  background-size: cover;
+  transition: ;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
 .drinkCard div div p {
   display: none;
 }
@@ -54,11 +87,21 @@ input {
  overflow: hidden;
 }
 
-/* .card-text {
-  display: none; */
+* {
+  box-sizing: border-box;
 }
 
-carousel {
-  height: 500px;
-  border: black;
+.video-wrapper {
+  position: relative;
+  max-width: 1600px;
+  margin: 0 auto 45px;
+}
+.video-wrapper h3 {
+  color: black;
+  position: absolute;
+  top: 42%;
+  font-size: 60px;
+  text-align: center;
+  left: 0;
+  right: 0;
 }

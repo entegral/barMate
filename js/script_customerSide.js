@@ -103,13 +103,23 @@ Order.prototype.updateTab = function () {
   var output = "<ul>"
 
   this.drinks.forEach(function(drink){
-    output += "<li class='tabLineItem'>" + drink.drinkName + "</li>"
-    output += "<button type='button' class='" + drink.drinkName + " removeDrink btn center btn-sm btn-danger'>Remove From Tab</button>"
+    output += "<li class='tabLineItem'>" + drink.drinkName + "<br>"
+    output += "<button type='button' class='" + drink.drinkName + " removeDrink btn center btn-sm btn-danger'>Remove From Tab</button></li>"
   })
   output += "</ul>"
   $("#currentTab").html(output);
 };
 
+function resetBoxes() {
+  $(".form-check-input").prop("checked", false);
+}
+
+function resetNameField() {
+  $("#first-name").val("");
+  $("#last-name").val("");
+  $("#phone-number").val("");
+  $("#date-of-birth").val("");
+}
 
 var customerOrder = new Order()
 
@@ -123,11 +133,15 @@ $(document).ready(function() {
   $("form#form1").submit(function(event){
     event.preventDefault ();
     interpretDrinks();
-    customerOrder.updateInfo();
+    if(customerOrder.firstName === "" || customerOrder.lastName === "") {
+      customerOrder.updateInfo();
+    }
+    resetBoxes();
   });
   $("#submitOrderButton").click(function() {
     ticketManager.addTicket(customerOrder.clone());
     customerOrder.clearOrder();
+    resetNameField();
   });
   $(".drinkCard").on("click", function(e){
     e.stopPropagation();

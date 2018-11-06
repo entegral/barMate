@@ -81,20 +81,20 @@ Input: ticketManager.writeTicketList()
 Expected Output: lists of pending and ready orders in the HTML
 ````
 
-- [ ] everytime page content is generated, clear previous html contents first
+- [x] everytime page content is generated, clear previous html contents first
 ````
 Input:  TicketManager.clearTicketLists
 Expected Output: $("#ticketList").html(""); $("#readyList").html("");
 ````
 
-- [ ] provide button to move an order from pending list to ready list
+- [x] provide button to move an order from pending list to ready list
 ````
 Input:  a ready button of an order is clicked
 Expected Output: move object from pending list to ready list
 ````
 
 
-- [ ] provide button to remove an order from pending list
+- [x] provide button to remove an order from pending list
 ````
 Input:  a remove button of an order is clicked
 Expected Output: remove object from pending list  
