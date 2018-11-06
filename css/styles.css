@@ -89,11 +89,13 @@ video {
 
 .drinkCard div div p {
   display: none;
+  font-weight: normal;
 }
 
 .drinkCard {
   margin: 10px;
   border: none;
+  box-shadow: 10px 10px 5px grey;
 }
 
 .overlayColor {
