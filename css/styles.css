@@ -57,6 +57,18 @@ input {
 //        Chris         //
 //                      //
 ////////////////////////// */
+
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  vertical-align: middle;
+}
+
 video {
   display: inline-block;
   vertical-align: baseline;
