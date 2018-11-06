@@ -129,4 +129,9 @@ $(document).ready(function() {
     ticketManager.addTicket(customerOrder.clone());
     customerOrder.clearOrder();
   });
+  $(".drinkCard").on("click", function(e){
+    e.stopPropagation();
+    var checkbox = $(this).find('input[type="checkbox"]');
+    checkbox.prop('checked', !checkbox.prop('checked'));
+  });
 });
