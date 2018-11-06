@@ -1,3 +1,7 @@
+body {
+  background-color: #eee;
+}
+
 #companySide {
   display: none;
 }
@@ -22,6 +26,7 @@ button {
   margin: 5px;
 }
 
+
 .lineItem {
   border: 1px solid lightgrey;
   border-radius: 5px;
@@ -34,12 +39,19 @@ input {
   margin: 15px;
 }
 
-<<<<<<< HEAD
-#customerUi {
+.drinkCard div div p {
   display: none;
-=======
-card {
-  margin: 18rem;
+}
+
+.drinkCard {
+  margin: 10px;
+  border: none;
+}
+
+.overlayColor {
+  background: rgba(75,200,75,0.52);
+  z-index: 2;
+ overflow: hidden;
 }
 
 /* .card-text {
@@ -49,5 +61,4 @@ card {
 carousel {
   height: 500px;
   border: black;
->>>>>>> 1dd30972a4ddafe723da8056019cef47568c533c
 }
