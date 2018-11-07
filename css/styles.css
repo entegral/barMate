@@ -121,6 +121,10 @@ video {
   height: 150px;
 }
 
+input[type='checkbox'] {
+  display: none;
+}
+
 
 .drinkCard div div p {
   display: none;
