@@ -119,6 +119,7 @@ $(document).ready(function() {
   $("#customer").click(function(){
     $("#customerSide").show();
     $("#selection").hide();
+    $("#startOrder").show();
     addSwitchListener();
   });
   addTabRemoveListener();
@@ -130,6 +131,19 @@ $(document).ready(function() {
     }
     resetBoxes();
   });
+
+// Add Ready to Order Button
+  $("#startOrder").click(function(){
+    $("#userInfo").toggle();
+    $("#orderButtons").show();
+    $("#startOrder").hide();
+  })
+
+  $("#addOrder").click(function(){
+    $("#userInfo").hide();
+    $("#tab").show();
+  })
+
   $("#submitOrderButton").click(function() {
     ticketManager.addTicket(customerOrder.clone());
     customerOrder.clearOrder();

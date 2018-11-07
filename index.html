@@ -339,28 +339,32 @@
 
 <!-- Floating Menu -->
 <div id="sidenav">
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
+  <div class="card" style="width: 20rem;">
+    <div class="card-body" id="userInfo">
       <div class="form-check">
-        <h5 class="card-title name-form">Please enter your name, number, and date of birth below</h5>
-        <input type="text" id="first-name" placeholder="John">
-        <input type="text" id="last-name" placeholder="Johnson">
-        <input type="text" id="phone-number" placeholder="234-456-7890">
-        <input class="form-control" id="date-of-birth" type="date">
+        <h6 class="card-title name-form">Please enter your name, number, and date of birth below</h6>
+        <input type="text" id="first-name" placeholder="First Name">
+        <input type="text" id="last-name" placeholder="Last Name">
+        <input type="text" id="phone-number" placeholder="Phone Number">
+        <input  id="date-of-birth" type="date">
       </div>
-      <button type="submit" class="btn btn-dark" name="button">Add to Order</button>
-      <button type="button" class="btn btn-dark"  name="button" id="submitOrderButton">Submit order</button>
+    </div>
+    <div id="orderButtons">
+      <button type="submit" class="btn btn-outline-info" name="button" id="addOrder">Add to Order</button>
+      <button type="button" class="btn btn-outline-info"  name="button" id="submitOrderButton">Submit order</button>
     </div>
   </div>
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">The items currently on your tab are:</h5>
+  <div class="card" style="width: 20rem;">
+    <button type="submit" class="btn btn-outline-info" name="button" id="startOrder">Order</button>
+  </div>
+  <div class="card" style="width: 20rem;">
+    <div class="card-body" id="tab">
+      <h6 class="card-title">The items currently on your tab are:</h6>
       <div id="currentTab">
       </div>
     </div>
   </div>
 </div>
-
 
   <div class="row" id="companySide">
     <div class="row">

@@ -106,8 +106,7 @@ video {
 
 #sidenav  {
   font-size: 15px;
-  font-family: sans-serif;
-   background: white;
+   /* background: white; */
    padding: 2px;;
    width: auto;
    height: auto;
@@ -117,4 +116,23 @@ video {
    right: 0px;
    opacity: .9;
    overflow: scroll;
+}
+
+#startOrder {
+  display:none;
+}
+
+#userInfo {
+  display:none;
+  text-align: center;
+}
+
+#orderButtons {
+  display: none;
+  margin-left: 30px;
+}
+
+#tab {
+  display:none;
+  text-align: center;
 }
