@@ -88,6 +88,9 @@ video {
     transition-delay: 0s;
   }
 
+.video-wrapper p {
+  font-size: .5em;
+}
 
 * {
   box-sizing: border-box;
