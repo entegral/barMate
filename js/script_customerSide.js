@@ -132,6 +132,7 @@ $(document).ready(function() {
     $("#customerSide").show();
     $("#selection").hide();
     $("#startOrder").show();
+    $("#sidenav").show();
     addSwitchListener();
   });
 
