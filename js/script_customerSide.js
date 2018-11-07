@@ -131,6 +131,7 @@ $(document).ready(function() {
   $("#customer").click(function(){
     $("#customerSide").show();
     $("#selection").hide();
+    $("#versionNum").hide();
     $("#startOrder").show();
     $("#sidenav").show();
     addSwitchListener();

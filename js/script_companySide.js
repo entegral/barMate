@@ -131,6 +131,7 @@ $(function() {
   $("#company").click(function(){
     $("#authenticate").show();
     $("#selection").hide();
+    $("#versionNum").hide();
     $("#sidenav").show();
   })
 
