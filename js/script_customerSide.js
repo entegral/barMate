@@ -144,29 +144,29 @@ $(document).ready(function() {
 // Add Ready to Order Button
   $("#startOrder").click(function(){
     if (customerOrder.firstName && customerOrder.lastName){
-      $("#tab").show();
-      $("#orderButtons").show();
-      $("#startOrder").hide();
+      $("#tab").slideDown();
+      $("#orderButtons").slideDown();
+      $("#startOrder").slideUp();
     }else {
-      $("#userInfo").toggle();
-      $("#orderButtons").show();
-      $("#startOrder").hide();
+      $("#userInfo").slideToggle();
+      $("#orderButtons").slideDown();
+      $("#startOrder").slideUp();
     }
   });
 
 
   $("#addOrder").click(function(){
-    $("#userInfo").hide();
-    $("#tab").show();
+    $("#userInfo").slideUp();
+    $("#tab").slideDown();
     interpretDrinks();
     resetBoxes();
   });
 
   $(".close").click(function(){
-    $("#userInfo").hide();
-    $("#orderButtons").hide();
-    $("#tab").hide();
-    $("#startOrder").show();
+    $("#userInfo").slideUp();
+    $("#orderButtons").slideUp();
+    $("#tab").slideUp();
+    $("#startOrder").slideDown();
 
   })
 
@@ -175,9 +175,9 @@ $(document).ready(function() {
     ticketManager.addTicket(customerOrder.clone());
     customerOrder.clearOrder();
     resetNameField();
-    $("#tab").hide();
-    $("#orderButtons").hide();
-    $("#startOrder").show();
+    $("#tab").slideUp();
+    $("#orderButtons").slideUp();
+    $("#startOrder").slideDown();
   });
 
 
