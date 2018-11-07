@@ -37,7 +37,7 @@ function CompanyPage() {};
 
 CompanyPage.prototype.displayPage = function() {
   $("#companySide").show();
-  $("#selection").hide();
+  $("#authenticate").hide();
   addSwitchListener();
 };
 
@@ -54,6 +54,14 @@ CompanyPage.prototype.ticketRemoveClickListeners = function() {
     ticketManager.removeTicket((ticketManager.tickets).getTicket(ticketIndex));
   })
 };
+
+CompanyPage.prototype.authenticate = function() {
+  var username = $("#username").val();
+  var password = $("#password").val();
+  if(username === testUsername && password === testPassword) {
+    companyPage.displayPage();
+  }
+}
 
 // Public UI Logic ------------ Public UI Logic ------------ Public UI Logic ------------ Public UI Logic
 
@@ -115,14 +123,22 @@ TicketManager.prototype.writeTicketList = function() {
 
 var ticketManager = new TicketManager()
 var companyPage = new CompanyPage();
+var testUsername = "Test";
+var testPassword = "password";
 
 $(function() {
 
   $("#company").click(function(){
-    companyPage.displayPage();
+    $("#authenticate").show();
+    $("#selection").hide();
   })
 
   companyPage.ticketReadyClickListeners();
   companyPage.ticketRemoveClickListeners();
+
+  $("#authenticateForm").submit(function(event) {
+    event.preventDefault();
+    companyPage.authenticate();
+  })
 
 });
