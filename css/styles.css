@@ -74,6 +74,7 @@ video {
 
 #currentTab ul li {
   list-style-type: none;
+  font-weight: normal;
 }
 
 .video-wrapper {
@@ -109,13 +110,12 @@ video {
 }
 
 #sidenav  {
+  position: fixed;
   font-size: 15px;
-   /* background: white; */
    padding: 2px;;
    width: auto;
    height: auto;
    z-index: 100;
-   position: fixed;
    bottom: 0px;
    right: 0px;
    opacity: .9;
@@ -123,8 +123,20 @@ video {
 }
 
 #startOrder {
-  display:none;
+  display: none;
+  position: fixed;
+  bottom: 50px;
+  right: 100px;
+  z-index: 99;
+  padding: 8px;
+  font-size: 20px;
+  background: #FFF;
+  border-radius: 5px;
+  text-transform: uppercase;
+  line-height: 14px;
+  cursor: pointer;
 }
+
 
 #userInfo {
   display:none;
