@@ -72,6 +72,10 @@ video {
   box-sizing: border-box;
 }
 
+#currentTab ul li {
+  list-style-type: none;
+}
+
 .video-wrapper {
   position: relative;
   max-width: 1600px;

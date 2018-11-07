@@ -90,8 +90,8 @@ Order.prototype.clearCurrentTab = function () {
 Order.prototype.updateTab = function () {
   var output = "<ul>"
   this.drinks.forEach(function(drink){
-    output += "<li class='tabLineItem'>" + drink.drinkName + "<br>"
-    output += "<button type='button' class='" + drink.drinkName + " removeDrink btn center btn-sm btn-danger'>Remove From Tab</button></li>"
+    output += "<li class='tabLineItem'>" + drink.drinkName
+    output += "<button type='button' class='" + drink.drinkName + " removeDrink btn center btn-sm btn-danger'>    -    </button></li>"
   })
   output += "</ul>"
   output += "<p>Your total is: $" + this.totalCost + "</p>";
@@ -147,7 +147,10 @@ $(document).ready(function() {
   $("#submitOrderButton").click(function() {
     ticketManager.addTicket(customerOrder.clone());
     customerOrder.clearOrder();
-    resetNameField();
+    resetNameField();//
+    $("#tab").hide();
+    $("#orderButtons").hide();
+    $("#startOrder").show();
   });
   $(".drinkCard").on("click", function(e){
     e.stopPropagation();
