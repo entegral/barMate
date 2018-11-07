@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <!-- <div class="container">
       <div class="row">
         <div class="col-lg-4" id="head">
           <img id="logo" src="images/logo.png">
@@ -24,7 +24,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
 
@@ -32,7 +32,9 @@
     <video poster="video/video.jpg" id="bgvid" playsinline autoplay muted loop>
       <source src="video/video.mp4" type="video/mp4">
     </video>
-    <h3>barMate<b><p>v0.9</p></h3>
+    <h3><img id="logo" src="images/logo.png">
+    <p>v0.9</p>
+  </h3>
   </div>
 
   <div class="container" id="selection">
@@ -385,33 +387,41 @@
 
     <!-- Floating Menu -->
     <div id="sidenav">
-      <div class="card" style="width: 20rem;">
-        <div class="card-body" id="userInfo">
-          <div class="form-check">
-            <h6 class="card-title name-form">Please enter your name, number, and date of birth below</h6>
-            <input type="text" id="first-name" placeholder="First Name">
-            <input type="text" id="last-name" placeholder="Last Name">
-            <input type="text" id="phone-number" placeholder="Phone Number">
-            <input id="date-of-birth" type="date">
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-sm-4">
+        <img src="images/logo.png" alt="">
+      </div> -->
+      <div class="col-sm-8">
+        <div class="card" style="width: 20rem;">
+          <div class="card-body" id="userInfo">
+            <div class="form-check">
+              <h6 class="card-title name-form">Please enter your name, number, and date of birth below</h6>
+              <input type="text" id="first-name" placeholder="First Name">
+              <input type="text" id="last-name" placeholder="Last Name">
+              <input type="text" id="phone-number" placeholder="Phone Number">
+              <input id="date-of-birth" type="date">
+            </div>
+          </div>
+          <div id="orderButtons">
+            <button type="submit" class="btn btn-outline-info" name="button" id="addOrder">Add to Order</button>
+            <button type="button" class="btn btn-outline-info" name="button" id="submitOrderButton">Submit order</button>
           </div>
         </div>
-        <div id="orderButtons">
-          <button type="submit" class="btn btn-outline-info" name="button" id="addOrder">Add to Order</button>
-          <button type="button" class="btn btn-outline-info" name="button" id="submitOrderButton">Submit order</button>
+        <div class="card" style="width: 20rem;">
+          <button type="submit" class="btn btn-outline-info" name="button" id="startOrder">Order</button>
         </div>
-      </div>
-      <div class="card" style="width: 20rem;">
-        <button type="submit" class="btn btn-outline-info" name="button" id="startOrder">Order</button>
-      </div>
-      <div class="card" style="width: 20rem;">
-        <div class="card-body" id="tab">
-          <h6 class="card-title">The items currently on your tab are:</h6>
-          <div id="currentTab">
+        <div class="card" style="width: 20rem;">
+          <div class="card-body" id="tab">
+            <h6 class="card-title">The items currently on your tab are:</h6>
+            <div id="currentTab">
+            </div>
           </div>
         </div>
       </div>
     </div>
-
+  </div>
+</div>
     <div class="row" id="companySide">
       <div class="row">
         <div class="col-6" id="outstandingTickets">
