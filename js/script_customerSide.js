@@ -63,6 +63,7 @@ function addSwitchListener() {
   $(".video-wrapper").on("click", function() {
     $("#customerSide").toggle();
     $("#companySide").toggle();
+    $("#startOrder").toggle();
   });
 };
 
@@ -116,42 +117,46 @@ function resetNameField() {
 var customerOrder = new Order()
 
 $(document).ready(function() {
+
+
   $("#customer").click(function(){
     $("#customerSide").show();
     $("#selection").hide();
     $("#startOrder").show();
     addSwitchListener();
   });
+
+
   addTabRemoveListener();
-  $("form#form1").submit(function(event){
-    event.preventDefault ();
-    interpretDrinks();
-    if(customerOrder.firstName === "" || customerOrder.lastName === "") {
-      customerOrder.updateInfo();
-    }
-    resetBoxes();
-  });
+
 
 // Add Ready to Order Button
   $("#startOrder").click(function(){
     $("#userInfo").toggle();
     $("#orderButtons").show();
     $("#startOrder").hide();
-  })
+  });
+
 
   $("#addOrder").click(function(){
     $("#userInfo").hide();
     $("#tab").show();
-  })
+    interpretDrinks();
+    resetBoxes();
+  });
+
 
   $("#submitOrderButton").click(function() {
+    customerOrder.updateInfo();
     ticketManager.addTicket(customerOrder.clone());
     customerOrder.clearOrder();
-    resetNameField();//
+    resetNameField();
     $("#tab").hide();
     $("#orderButtons").hide();
     $("#startOrder").show();
   });
+
+
   $(".drinkCard").on("click", function(e){
     e.stopPropagation();
     var checkbox = $(this).find('input[type="checkbox"]');
@@ -159,4 +164,5 @@ $(document).ready(function() {
     $(this).toggleClass("overlayColor")
     $(this).find("p").slideToggle();
   });
+
 });

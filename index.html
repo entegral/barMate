@@ -13,263 +13,266 @@
 <body>
   <!-- Move container below video wrapper after demo -->
   <div class="container">
-  <div class="video-wrapper">
-    <video poster="video/video.jpg" id="bgvid" playsinline autoplay muted loop>
-      <source src="video/video.mp4" type="video/mp4">
-    </video>
-    <h3>barMate<b><p id="version">v0.9</p></h3>
-  </div>
-
-  <div class="row" id="selection">
-    <div class="offset-md-4 col-md-4">
-      <h4>Which are you?</h4>
-      <button id="customer" class="btn btn-info" type="button" name="button">Customer</button>
-      <button id="company" class="btn btn-info" type="button" name="button">Bartender</button>
+    <div class="video-wrapper">
+      <video poster="video/video.jpg" id="bgvid" playsinline autoplay muted loop>
+        <source src="video/video.mp4" type="video/mp4">
+      </video>
+      <h3>barMate<b>
+          <p id="version">v0.9</p>
+      </h3>
     </div>
-  </div>
+
+    <div class="row" id="selection">
+      <div class="offset-md-4 col-md-4">
+        <h4>Which are you?</h4>
+        <button id="customer" class="btn btn-info" type="button" name="button">Customer</button>
+        <button id="company" class="btn btn-info" type="button" name="button">Bartender</button>
+      </div>
+    </div>
 
 
-<div id="customerSide">
-  <div class="container-fluid">
-    <form id="form1" action="index.html" method="post">
-      <div class="row">
-        <div class=" col-md-4">
-          <div class="card drinkCard" style="width: 18rem;">
-            <img class="card-img-top" src="images/drink/pbr.jpeg" alt="Card image cap">
-            <div class="card-body">
-              <div class="form-check">
-                <h5 class="card-title">PBR</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Pabst Brewing Company<br>4.74% ABV<br>$2.00</h6>
-                <p class="card-text">Pabst Blue Ribbon is brewed in the finest traditions of an American Premium Lager dating back to 1844. Brewed with a combination of 2 & 6-row malted barley, select cereal grains and American and European
-                  hops, Pabst Blue Ribbon is fermented with a proprietary lager yeast.</p>
-                  <input class="form-check-input" type="checkbox" name="beers" value="2.00" data-value2="PBR">
-                  <label class="form-check-label" for="PBR">Check here to add to order!</label>
+    <div id="customerSide">
+      <div class="container-fluid">
+        <form id="form1" action="index.html" method="post">
+          <div class="row">
+            <div class=" col-md-4">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/pbr.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">PBR</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Pabst Brewing Company<br>4.74% ABV<br>$2.00</h6>
+                    <p class="card-text">Pabst Blue Ribbon is brewed in the finest traditions of an American Premium Lager dating back to 1844. Brewed with a combination of 2 & 6-row malted barley, select cereal grains and American and European
+                      hops, Pabst Blue Ribbon is fermented with a proprietary lager yeast.</p>
+                    <input class="form-check-input" type="checkbox" name="beers" value="2.00" data-value2="PBR">
+                    <label class="form-check-label" for="PBR">Check here to add to order!</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-4">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/tecatejpg.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">Tecate</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">FEMSA - Cuauhtémoc-Moctezuma (Heineken) <br>4.60% ABV<br>$2.00</h6>
+                    <p class="card-text">A Lager beer with a delicious aroma of malt and hops and a delicate balance in its subtle refreshing taste.</p>
+                    <input class="form-check-input" type="checkbox" name="beers" value="2.00" data-value2="Tecate">
+                    <label class="form-check-label" for="Tecate">Check here to add to order!</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-4 ">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/HUB.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">Hopworks Urban Brewing Lager</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Hopworks Urban Brewing<br>5.10% ABV<br>$5.00</h6>
+                    <p class="card-text">Grainy, golden, 100% organin, formerly draft only brew spiced with Zeus hops.</p>
+                    <input class="form-check-input" type="checkbox" name="beers" value="5.00" data-value2="Hopworks Urban Brewing">
+                    <label class="form-check-label" for="Hopworks-Urban-Brewing">Check here to add to order!</label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class=" col-md-4">
-            <div class="card drinkCard" style="width: 18rem;">
-              <img class="card-img-top" src="images/drink/tecatejpg.jpg" alt="Card image cap">
-              <div class="card-body">
-                <div class="form-check">
-                  <h5 class="card-title">Tecate</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">FEMSA - Cuauhtémoc-Moctezuma (Heineken) <br>4.60% ABV<br>$2.00</h6>
-                  <p class="card-text">A Lager beer with a delicious aroma of malt and hops and a delicate balance in its subtle refreshing taste.</p>
-                  <input class="form-check-input" type="checkbox" name="beers" value="2.00" data-value2="Tecate">
-                  <label class="form-check-label" for="Tecate">Check here to add to order!</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class=" col-md-4 ">
-            <div class="card drinkCard" style="width: 18rem;">
-              <img class="card-img-top" src="images/drink/HUB.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <div class="form-check">
-                  <h5 class="card-title">Hopworks Urban Brewing Lager</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Hopworks Urban Brewing<br>5.10% ABV<br>$5.00</h6>
-                  <p class="card-text">Grainy, golden, 100% organin, formerly draft only brew spiced with Zeus hops.</p>
-                  <input class="form-check-input" type="checkbox" name="beers" value="5.00" data-value2="Hopworks Urban Brewing">
-                  <label class="form-check-label" for="Hopworks-Urban-Brewing">Check here to add to order!</label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class=" col-md-4 ">
-            <div class="card drinkCard" style="width: 18rem;">
-              <img class="card-img-top" src="images/drink/breakside-pils.jpg" alt="Card image cap">
-              <div class="card-body">
-                <div class="form-check">
-                  <h5 class="card-title">Pilsner by Breakside Brewing</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Breakside Brewing<br>5.30% ABV<br>$5.00</h6>
-                  <p class="card-text">Easy pilsner with biscuit-like maltiness and a light, tangy, citrusy kick.</p>
-                  <input class="form-check-input" type="checkbox" name="beers" value="5.00" data-value2="Breakside Pilsner">
-                  <label class="form-check-label" for="Breakside-Pilsner">Check here to add to order!</label>
+          <div class="row">
+            <div class=" col-md-4 ">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/breakside-pils.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">Pilsner by Breakside Brewing</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Breakside Brewing<br>5.30% ABV<br>$5.00</h6>
+                    <p class="card-text">Easy pilsner with biscuit-like maltiness and a light, tangy, citrusy kick.</p>
+                    <input class="form-check-input" type="checkbox" name="beers" value="5.00" data-value2="Breakside Pilsner">
+                    <label class="form-check-label" for="Breakside-Pilsner">Check here to add to order!</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-4">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/ninkasiPils.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">Ninkasi Pilsner</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Ninkasi Brewing Co <br>5.10% ABV<br>$4.50</h6>
+                    <p class="card-text">Malt forward, German-style pilsner with spicy, crackling hop notes.</p>
+                    <input class="form-check-input" type="checkbox" name="beers" value="4.50" data-value2="Ninkasi Pilsner">
+                    <label class="form-check-label" for="Ninkasi-Pilsner">Check here to add to order!</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-4">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/riverale.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">River Ale</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Deschutes Brewery<br>4.0% ABV<br>$4.00</h6>
+                    <p class="card-text">Sociably low-alcohol with ample Cascade and Crystal hops kick this light golden ale up a notch.</p>
+                    <input class="form-check-input" type="checkbox" name="beers" value="4.00" data-value2="River Ale">
+                    <label class="form-check-label" for="River-Ale">Check here to add to order!</label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class=" col-md-4">
-            <div class="card drinkCard" style="width: 18rem;">
-              <img class="card-img-top" src="images/drink/ninkasiPils.jpg" alt="Card image cap">
-              <div class="card-body">
-                <div class="form-check">
-                  <h5 class="card-title">Ninkasi Pilsner</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Ninkasi Brewing Co <br>5.10% ABV<br>$4.50</h6>
-                  <p class="card-text">Malt forward, German-style pilsner with spicy, crackling hop notes.</p>
-                  <input class="form-check-input" type="checkbox" name="beers" value="4.50" data-value2="Ninkasi Pilsner">
-                  <label class="form-check-label" for="Ninkasi-Pilsner">Check here to add to order!</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class=" col-md-4">
-            <div class="card drinkCard" style="width: 18rem;">
-              <img class="card-img-top" src="images/drink/riverale.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <div class="form-check">
-                  <h5 class="card-title">River Ale</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Deschutes Brewery<br>4.0% ABV<br>$4.00</h6>
-                  <p class="card-text">Sociably low-alcohol with ample Cascade and Crystal hops kick this light golden ale up a notch.</p>
-                  <input class="form-check-input" type="checkbox" name="beers" value="4.00" data-value2="River Ale">
-                  <label class="form-check-label" for="River-Ale">Check here to add to order!</label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="row">
-          <div class=" col-md-4">
-            <div class="card drinkCard" style="width: 18rem;">
-              <img class="card-img-top" src="images/drink/vaporizer.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <div class="form-check">
-                  <h5 class="card-title">Vaporizer</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Double Mountain Brewery<br>6.0% ABV<br>$5.00</h6>
-                  <p class="card-text">Hazy-gold with a sweet, grainy start and a dry, lemony finish.</p>
-                  <input class="form-check-input" type="checkbox" name="beers" value="5.00" data-value2="Vaporizer">
-                  <label class="form-check-label" for="vaporizer">Check here to add to order!</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class=" col-md-4">
-            <div class="card drinkCard" style="width: 18rem;">
-              <img class="card-img-top" src="images/drink/rpm.jpg" alt="Card image cap">
-              <div class="card-body">
-                <div class="form-check">
-                  <h5 class="card-title">RPM IPA</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Boneyard Brewing Co <br>7.00% ABV<br>$5.00</h6>
-                  <p class="card-text">Massive hop flavors. Juicy, citrusy taste, faint cereal sweetness, and clean, crisp finish.</p>
-                  <input class="form-check-input" type="checkbox" name="beers" value="5.00" data-value2="RPM">
-                  <label class="form-check-label" for="RPM">Check here to add to order!</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class=" col-md-4">
-            <div class="card drinkCard" style="width: 18rem;">
-              <img class="card-img-top" src="images/drink/bluedot.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <div class="form-check">
-                  <h5 class="card-title">Blue Dot Double IPA</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Hair of the Dog Brewing Co<br>6.0% ABV<br>$5.00</h6>
-                  <p class="card-text">Brawny and resinously hoppy without the acrid finish that can mar lesser interpretations</p>
-                  <input class="form-check-input" type="checkbox" name="beers" value="5.00" data-value2="Blue Dot">
-                  <label class="form-check-label" for="blue-dot">Check here to add to order!</label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
 
-        <div class="row">
-          <div class=" col-md-4">
-            <div class="card drinkCard" style="width: 18rem;">
-              <img class="card-img-top" src="images/drink/longBrewing.jpg" alt="Card image cap">
-              <div class="card-body">
-                <div class="form-check">
-                  <h5 class="card-title">IPA</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Long Brewery<br>6.20% ABV<br>$5.00</h6>
-                  <p class="card-text">Paul Long’s one-man wine country operation is proof that big brews can come from small places. His American-style IPA, brewed and dry-hopped with six hop varieties, bursts with bright, floral, tropical notes.</p>
-                  <input class="form-check-input" type="checkbox" name="beers" value="5.00" data-value2="IPA">
-                  <label class="form-check-label" for="IPA">Check here to add to order!</label>
+          <div class="row">
+            <div class=" col-md-4">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/vaporizer.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">Vaporizer</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Double Mountain Brewery<br>6.0% ABV<br>$5.00</h6>
+                    <p class="card-text">Hazy-gold with a sweet, grainy start and a dry, lemony finish.</p>
+                    <input class="form-check-input" type="checkbox" name="beers" value="5.00" data-value2="Vaporizer">
+                    <label class="form-check-label" for="vaporizer">Check here to add to order!</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-4">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/rpm.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">RPM IPA</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Boneyard Brewing Co <br>7.00% ABV<br>$5.00</h6>
+                    <p class="card-text">Massive hop flavors. Juicy, citrusy taste, faint cereal sweetness, and clean, crisp finish.</p>
+                    <input class="form-check-input" type="checkbox" name="beers" value="5.00" data-value2="RPM">
+                    <label class="form-check-label" for="RPM">Check here to add to order!</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-4">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/bluedot.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">Blue Dot Double IPA</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Hair of the Dog Brewing Co<br>6.0% ABV<br>$5.00</h6>
+                    <p class="card-text">Brawny and resinously hoppy without the acrid finish that can mar lesser interpretations</p>
+                    <input class="form-check-input" type="checkbox" name="beers" value="5.00" data-value2="Blue Dot">
+                    <label class="form-check-label" for="blue-dot">Check here to add to order!</label>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class=" col-md-4">
-            <div class="card drinkCard" style="width: 18rem;">
-              <img class="card-img-top" src="images/drink/chainbreaker.jpg" alt="Card image cap">
-              <div class="card-body">
-                <div class="form-check">
-                  <h5 class="card-title">Chainbreaker White IPA</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Deschutes Brewery <br>5.60% ABV<br>$4.00</h6>
-                  <p class="card-text">Named for a legendary mountain bike race, this delicious cloudy-gold ale is a lovely hybrid of Belgian wit—orange peel and coriander-spiced—and tangy, Northwest-style IPA.</p>
-                  <input class="form-check-input" type="checkbox" name="beers" value="4.00" data-value2="Chainbreaker">
-                  <label class="form-check-label" for="chainbreaker">Check here to add to order!</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class=" col-md-4">
-            <div class="card drinkCard" style="width: 18rem;">
-              <img class="card-img-top" src="images/drink/wholeInTheHead.jpg" alt="Card image cap">
-              <div class="card-body">
-                <div class="form-check">
-                  <h5 class="card-title">Whole in the Head</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Hair of the Dog Brewing Co<br>6.0% ABV<br>$5.00</h6>
-                  <p class="card-text">Brawny and resinously hoppy without the acrid finish that can mar lesser interpretations</p>
-                  <input class="form-check-input" type="checkbox" name="beers" value="5.00" data-value2="Whole in the head">
-                  <label class="form-check-label" for="blue-dot">Check here to add to order!</label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class=" col-md-4">
-            <div class="card drinkCard" style="width: 18rem;">
-              <img class="card-img-top" src="images/drink/ashlandAmber.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <div class="form-check">
-                  <h5 class="card-title">Ashland Amber</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Caldera Brewing Co<br>5.40% ABV<br>$3.75</h6>
-                  <p class="card-text">A bready, slightly honeyish brew with a mellow, herbaceous tang, this isn’t a complex beer—but it is super-smooth and satisfying on cool Oregon summer nights.</p>
-                  <input class="form-check-input" type="checkbox" name="beers" value="3.75" data-value2="Ashland">
-                  <label class="form-check-label" for="Ashland">Check here to add to order!</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class=" col-md-4">
-            <div class="card drinkCard" style="width: 18rem;">
-              <img class="card-img-top" src="images/drink/killdevil.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <div class="form-check">
-                  <h5 class="card-title">Kill Devil Brown Ale</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Widmer Brothers Brewing <br>9.50% ABV<br>$6.75</h6>
-                  <p class="card-text">Caribbean mainstays like blackstrap molasses and palm sugar amp up this approximately English-style brown aged in Puerto Rican rum barrels and spiced with fruity Calypso hops.</p>
-                  <input class="form-check-input" type="checkbox" name="beers" value="6.75" data-value2="Kill Devil">
-                  <label class="form-check-label" for="kill-devil">Check here to add to order!</label>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class=" col-md-4">
-            <div class="card drinkCard" style="width: 18rem;">
-              <img class="card-img-top" src="images/drink/brothes.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <div class="form-check">
-                  <h5 class="card-title">Brother Thelonious</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">North Coast Brewing<br>9.40% ABV<br>$9.00</h6>
-                  <p class="card-text">The beer is being released in conjunction with the Thelonious Monk Institute of Jazz, and the brewery will make a contribution to the Institute for every case sold to support jazz education.</p>
-                  <input class="form-check-input" type="checkbox" name="beers" value="9.00" data-value2="Brother Thelonious">
-                  <label class="form-check-label" for="brother-Thelonious">Check here to add to order!</label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card drinkCard" style="width: 18rem;">
-              <img class="card-img-top" src="images/drink/peach.jpeg" alt="Card image cap">
-              <div class="card-body">
-                <div class="form-check">
-                  <h5 class="card-title">Peche 'n Brett</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Logsdon Organic Farmhouse<br>10% ABV<br>$9.50</h6>
-                  <p class="card-text">To his world-class oak-aged Seizoen Bretta (a funky, grassy, oaky saison beer) brewer Dave Logsdon adds a pound and a half of organic peaches per gallon, resulting in lush, ripe fruit flavors with an impressive
-                    kick.</p>
+          <div class="row">
+            <div class=" col-md-4">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/longBrewing.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">IPA</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Long Brewery<br>6.20% ABV<br>$5.00</h6>
+                    <p class="card-text">Paul Long’s one-man wine country operation is proof that big brews can come from small places. His American-style IPA, brewed and dry-hopped with six hop varieties, bursts with bright, floral, tropical notes.</p>
+                    <input class="form-check-input" type="checkbox" name="beers" value="5.00" data-value2="IPA">
+                    <label class="form-check-label" for="IPA">Check here to add to order!</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-4">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/chainbreaker.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">Chainbreaker White IPA</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Deschutes Brewery <br>5.60% ABV<br>$4.00</h6>
+                    <p class="card-text">Named for a legendary mountain bike race, this delicious cloudy-gold ale is a lovely hybrid of Belgian wit—orange peel and coriander-spiced—and tangy, Northwest-style IPA.</p>
+                    <input class="form-check-input" type="checkbox" name="beers" value="4.00" data-value2="Chainbreaker">
+                    <label class="form-check-label" for="chainbreaker">Check here to add to order!</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-4">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/wholeInTheHead.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">Whole in the Head</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Hair of the Dog Brewing Co<br>6.0% ABV<br>$5.00</h6>
+                    <p class="card-text">Brawny and resinously hoppy without the acrid finish that can mar lesser interpretations</p>
+                    <input class="form-check-input" type="checkbox" name="beers" value="5.00" data-value2="Whole in the head">
+                    <label class="form-check-label" for="blue-dot">Check here to add to order!</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class=" col-md-4">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/ashlandAmber.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">Ashland Amber</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Caldera Brewing Co<br>5.40% ABV<br>$3.75</h6>
+                    <p class="card-text">A bready, slightly honeyish brew with a mellow, herbaceous tang, this isn’t a complex beer—but it is super-smooth and satisfying on cool Oregon summer nights.</p>
+                    <input class="form-check-input" type="checkbox" name="beers" value="3.75" data-value2="Ashland">
+                    <label class="form-check-label" for="Ashland">Check here to add to order!</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-4">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/killdevil.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">Kill Devil Brown Ale</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Widmer Brothers Brewing <br>9.50% ABV<br>$6.75</h6>
+                    <p class="card-text">Caribbean mainstays like blackstrap molasses and palm sugar amp up this approximately English-style brown aged in Puerto Rican rum barrels and spiced with fruity Calypso hops.</p>
+                    <input class="form-check-input" type="checkbox" name="beers" value="6.75" data-value2="Kill Devil">
+                    <label class="form-check-label" for="kill-devil">Check here to add to order!</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class=" col-md-4">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/brothes.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">Brother Thelonious</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">North Coast Brewing<br>9.40% ABV<br>$9.00</h6>
+                    <p class="card-text">The beer is being released in conjunction with the Thelonious Monk Institute of Jazz, and the brewery will make a contribution to the Institute for every case sold to support jazz education.</p>
+                    <input class="form-check-input" type="checkbox" name="beers" value="9.00" data-value2="Brother Thelonious">
+                    <label class="form-check-label" for="brother-Thelonious">Check here to add to order!</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card drinkCard" style="width: 18rem;">
+                <img class="card-img-top" src="images/drink/peach.jpeg" alt="Card image cap">
+                <div class="card-body">
+                  <div class="form-check">
+                    <h5 class="card-title">Peche 'n Brett</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Logsdon Organic Farmhouse<br>10% ABV<br>$9.50</h6>
+                    <p class="card-text">To his world-class oak-aged Seizoen Bretta (a funky, grassy, oaky saison beer) brewer Dave Logsdon adds a pound and a half of organic peaches per gallon, resulting in lush, ripe fruit flavors with an
+                      impressive
+                      kick.</p>
                     <input class="form-check-input" type="checkbox" name="beers" value="9.50" data-value2="Peche">
                     <label class="form-check-label" for="Peche">Check here to add to order!</label>
                   </div>
@@ -306,7 +309,7 @@
             </div>
           </div>
 
-        <!-- <div class="row">
+          <!-- <div class="row">
           <div class=" col-md-4" id="detailForm">
             <div class="card" style="width: 18rem;">
               <div class="card-body">
@@ -322,7 +325,6 @@
               </div>
             </div>
           </div>
-        </form>
         <div class="col-md-4">
           <div class="card" style="width: 18rem;">
             <div class="card-body">
@@ -334,60 +336,61 @@
           </div>
         </div>
       </div> -->
-    </div>
-  </div>
-
-<!-- Floating Menu -->
-<div id="sidenav">
-  <div class="card" style="width: 20rem;">
-    <div class="card-body" id="userInfo">
-      <div class="form-check">
-        <h6 class="card-title name-form">Please enter your name, number, and date of birth below</h6>
-        <input type="text" id="first-name" placeholder="First Name">
-        <input type="text" id="last-name" placeholder="Last Name">
-        <input type="text" id="phone-number" placeholder="Phone Number">
-        <input  id="date-of-birth" type="date">
+    </form>
       </div>
     </div>
-    <div id="orderButtons">
-      <button type="submit" class="btn btn-outline-info" name="button" id="addOrder">Add to Order</button>
-      <button type="button" class="btn btn-outline-info"  name="button" id="submitOrderButton">Submit order</button>
-    </div>
-  </div>
-  <div class="card" style="width: 20rem;">
-    <button type="submit" class="btn btn-outline-info" name="button" id="startOrder">Order</button>
-  </div>
-  <div class="card" style="width: 20rem;">
-    <div class="card-body" id="tab">
-      <h6 class="card-title">The items currently on your tab are:</h6>
-      <div id="currentTab">
-      </div>
-    </div>
-  </div>
-</div>
 
-  <div class="row" id="companySide">
-    <div class="row">
-      <div class="col-6" id="outstandingTickets">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Here are the outstanding tickets:</h4>
-            <ol class="card-text" id="ticketList"></ol>
+    <!-- Floating Menu -->
+    <div id="sidenav">
+      <div class="card" style="width: 20rem;">
+        <div class="card-body" id="userInfo">
+          <div class="form-check">
+            <h6 class="card-title name-form">Please enter your name, number, and date of birth below</h6>
+            <input type="text" id="first-name" placeholder="First Name">
+            <input type="text" id="last-name" placeholder="Last Name">
+            <input type="text" id="phone-number" placeholder="Phone Number">
+            <input id="date-of-birth" type="date">
           </div>
         </div>
+        <div id="orderButtons">
+          <button type="submit" class="btn btn-outline-info" name="button" id="addOrder">Add to Order</button>
+          <button type="button" class="btn btn-outline-info" name="button" id="submitOrderButton">Submit order</button>
+        </div>
       </div>
-
-      <div class="col-6" id="completedTickets">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">Your order is ready!  Please come to the bar!</h4>
-            <ol class="card-text" id="readyList"></ol>
+      <div class="card" style="width: 20rem;">
+        <button type="submit" class="btn btn-outline-info" name="button" id="startOrder">Order</button>
+      </div>
+      <div class="card" style="width: 20rem;">
+        <div class="card-body" id="tab">
+          <h6 class="card-title">The items currently on your tab are:</h6>
+          <div id="currentTab">
           </div>
         </div>
       </div>
     </div>
+
+    <div class="row" id="companySide">
+      <div class="row">
+        <div class="col-6" id="outstandingTickets">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Here are the outstanding tickets:</h4>
+              <ol class="card-text" id="ticketList"></ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6" id="completedTickets">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Your order is ready! Please come to the bar!</h4>
+              <ol class="card-text" id="readyList"></ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </body>
 
 </html>
