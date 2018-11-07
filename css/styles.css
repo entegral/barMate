@@ -103,3 +103,18 @@ video {
   z-index: 2;
   overflow: hidden;
 }
+
+#sidenav  {
+  font-size: 15px;
+  font-family: sans-serif;
+   background: white;
+   padding: 2px;;
+   width: auto;
+   height: auto;
+   z-index: 100;
+   position: fixed;
+   bottom: 0px;
+   right: 0px;
+   opacity: .9;
+   overflow: scroll;
+}
