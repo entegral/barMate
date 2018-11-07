@@ -18,6 +18,11 @@ body {
   font-size: .5em;
 }
 
+#authenticate {
+  display: none;
+  text-align: center;
+}
+
 .center {
   text-align: center;
 }
