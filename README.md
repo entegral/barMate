@@ -4,7 +4,7 @@
 
 ## Description
 
-_An app to help people place orders and help businesses maintain an efficient workflow._
+_An app to help people place orders and help businesses maintain an efficient workflow.  barMate provides customers with a way to order drinks without approaching an employee, easing lines and reducing crowding in the main room.  For the bar, it provides a total overhaul of existing workflow, providing clear, easy to read displays to make customer orders intuitive.  When the drink is ready, a button can be pressed to notify the customer without having to leave the bar, reducing work needed to bring drinks across the seating area._
 
 ## Setup/Installation Requirements
 
@@ -29,7 +29,7 @@ Expected Output: order = {name, age, phone number, price, drinkArray}
 
 - [x] add drinks to order
 ````
-Input: oryder.addDrink(new Drink)
+Input: order.addDrink(new Drink)
 Expected Output: Order.drinkArray = [Drink]
 ````
 
