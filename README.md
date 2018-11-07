@@ -100,7 +100,6 @@ Input:  a remove button of an order is clicked
 Expected Output: remove object from pending list  
 ````
 
-
 ## Technologies Used
 _GitHub, HTML, CSS, Bootstrap, Javascript, JQuery_
 
