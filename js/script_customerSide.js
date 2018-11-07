@@ -43,6 +43,56 @@ Order.prototype.clone = function (){
   return newOrder;
 }
 
+Order.prototype.clearOrder = function() {
+  this.firstName = "",
+  this.lastName = "",
+  this.dateOfBirth = "",
+  this.phoneNumber = "",
+  this.drinks = [],
+  this.totalCost = 0
+  this.clearCurrentTab();
+}
+
+
+//  UI Logic ------------  UI Logic ------------  UI Logic ------------  UI Logic
+
+var chrisDrinkList = [
+  ["images/drink/pbr.jpeg","PBR","Pabst Brewing Company<br>4.74% ABV<br>$2.00","Pabst Blue Ribbon is brewed in the finest traditions of an American Premium Lager dating back to 1844. Brewed with a combination of 2 & 6-row malted barley, select cereal grains and American and European hops, Pabst Blue Ribbon is fermented with a proprietary lager yeast.", "beers","2.00","PBR","PBR"],
+  ["images/drink/tecatejpg.jpg","Tecate","FEMSA - Cuauhtémoc-Moctezuma (Heineken) <br>4.60% ABV<br>$2.00","A Lager beer with a delicious aroma of malt and hops and a delicate balance in its subtle refreshing taste.","beers","2.00","Tecate","Tecate"],
+  ["images/drink/HUB.jpeg","Hopworks Urban Brewing Lager","Hopworks Urban Brewing<br>5.10% ABV<br>$5.00","Grainy, golden, 100% organin, formerly draft only brew spiced with Zeus hops.","beers","5.00","Hopworks Urban Brewing","Hopworks-Urban-Brewing"],
+  ["images/drink/breakside-pils.jpg","Pilsner by Breakside Brewing","Breakside Brewing<br>5.30% ABV<br>$5.00","Easy pilsner with biscuit-like maltiness and a light, tangy, citrusy kick.","beers","5.00","Breakside Pilsner", "Breakside-Pilsner"],
+  ["images/drink/breakside-pils.jpg","Pilsner by Breakside Brewing","Breakside Brewing<br>5.30% ABV<br>$5.00","Easy pilsner with biscuit-like maltiness and a light, tangy, citrusy kick.","beers","5.00","Breakside Pilsner","Breakside-Pilsner"],
+  ["images/drink/ninkasiPils.jpg","Ninkasi Pilsner","Ninkasi Brewing Co <br>5.10% ABV<br>$4.50","Malt forward, German-style pilsner with spicy, crackling hop notes.","beers","4.50","Ninkasi Pilsner","Ninkasi-Pilsner"],
+  ["images/drink/riverale.jpeg","River Ale","Deschutes Brewery<br>4.0% ABV<br>$4.00","Sociably low-alcohol with ample Cascade and Crystal hops kick this light golden ale up a notch.","beers","4.00","River Ale","River-Ale"],
+  ["images/drink/vaporizer.jpeg","Vaporizer","Double Mountain Brewery<br>6.0% ABV<br>$5.00","Hazy-gold with a sweet, grainy start and a dry, lemony finish.","beers","5.00","Vaporizer","vaporizer"],
+  ["images/drink/rpm.jpg","RPM IPA","Boneyard Brewing Co <br>7.00% ABV<br>$5.00","Massive hop flavors. Juicy, citrusy taste, faint cereal sweetness, and clean, crisp finish.","beers","5.00","RPM","RPM"],
+  ["images/drink/bluedot.jpeg","Blue Dot Double IPA","Hair of the Dog Brewing Co<br>6.0% ABV<br>$5.00","Brawny and resinously hoppy without the acrid finish that can mar lesser interpretations","beers","5.00","Blue Dot","blue-dot"],
+  ["images/drink/longBrewing.jpg","IPA","Long Brewery<br>6.20% ABV<br>$5.00","Paul Long’s one-man wine country operation is proof that big brews can come from small places. His American-style IPA, brewed and dry-hopped with six hop varieties, bursts with bright, floral, tropical notes.","beers","5.00","IPA","IPA"],
+  ["images/drink/chainbreaker.jpg","Chainbreaker White IPA","Deschutes Brewery <br>5.60% ABV<br>$4.00","Named for a legendary mountain bike race, this delicious cloudy-gold ale is a lovely hybrid of Belgian wit—orange peel and coriander-spiced—and tangy, Northwest-style IPA.","beers","4.00","Chainbreaker","chainbreaker"],
+  ["images/drink/wholeInTheHead.jpg","Whole in the Head","Hair of the Dog Brewing Co<br>6.0% ABV<br>$5.00","Brawny and resinously hoppy without the acrid finish that can mar lesser interpretations","beers","5.00","Whole in the head","whole"],
+  ["images/drink/ashlandAmber.jpeg","Ashland Amber","Caldera Brewing Co<br>5.40% ABV<br>$3.75","A bready, slightly honeyish brew with a mellow, herbaceous tang, this isn’t a complex beer—but it is super-smooth and satisfying on cool Oregon summer nights.","beers","3.75","Ashland","Ashland"],
+  ["images/drink/killdevil.jpeg","Kill Devil Brown Ale","Widmer Brothers Brewing <br>9.50% ABV<br>$6.75","Caribbean mainstays like blackstrap molasses and palm sugar amp up this approximately English-style brown aged in Puerto Rican rum barrels and spiced with fruity Calypso hops.","beers","6.75","Kill Devil","kill-devil"],
+  ["images/drink/brothes.jpeg","Brother Thelonious","North Coast Brewing<br>9.40% ABV<br>$9.00","The beer is being released in conjunction with the Thelonious Monk Institute of Jazz, and the brewery will make a contribution to the Institute for every case sold to support jazz education.","beers","9.00","Brother Thelonious","brother-Thelonious"],
+  ["images/drink/peach.jpeg","Peche 'n Brett","Logsdon Organic Farmhouse<br>10% ABV<br>$9.50","To his world-class oak-aged Seizoen Bretta (a funky, grassy, oaky saison beer) brewer Dave Logsdon adds a pound and a half of organic peaches per gallon, resulting in lush, ripe fruit flavors with an impressive kick.","beers","9.50","Peche","Peche"],
+  ["images/drink/cascade.jpeg","Cascade Apricot","Cascade Barrel House <br>8.50% ABV<br>$6.75","Bright and hazy orange with a zingy, lemony tartness up front, this Belgian-style ale flows with waves of delicious, ripe apricot flavor.","beers","6.75","Apricot Sour","apricot-sour"],
+  ["images/drink/sweetheat.JPG","Sweet Heat","Burnside Brewing Co<br>4.90% ABV<br>$5.00","Lesser chile beers crash the palate party and leave. But Burnside’s is brewed with apricot purée and Scotch bonnet peppers, which supply a lingering, welcome heat.","beers","4.90","Sweet Heat","sweet-heat"],
+  ["","","","","","","",""],
+]
+
+function DrinkCardManager (arrayOfDrinkData) {
+  this.drinks = arrayOfDrinkData;
+}
+
+DrinkCardManager.prototype.generateMenu =  function () {
+  var output = "";
+
+  for (var i = 0; i > this.drinks.length; i++){
+
+  }
+
+  return output;
+}
+
 Order.prototype.updateInfo = function () {
   this.firstName = $("#first-name").val();
   this.lastName = $("#last-name").val();
@@ -81,16 +131,6 @@ function updateCustomerInfoOnKeypress() {
     customerOrder.phoneNumber = $("#phone-number").val();
     customerOrder.dateOfBirth = $("#date-of-birth").val();
   })
-}
-
-Order.prototype.clearOrder = function() {
-  this.firstName = "",
-  this.lastName = "",
-  this.dateOfBirth = "",
-  this.phoneNumber = "",
-  this.drinks = [],
-  this.totalCost = 0
-  this.clearCurrentTab();
 }
 
 Order.prototype.clearCurrentTab = function () {
