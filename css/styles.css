@@ -145,6 +145,7 @@ input[type='checkbox'] {
 }
 
 #sidenav  {
+  display: none;
   position: fixed;
   font-size: 15px;
    padding: 2px;;

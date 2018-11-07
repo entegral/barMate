@@ -22,8 +22,8 @@ Order.prototype.removeDrink = function(name) {
   for (var i =0; i < this.drinks.length; i++) {
     if (this.drinks[i]) {
       if((this.drinks[i].drinkName).split(" ")[0] === name) {
-        this.totalCost -= this.drinks[i].drinkPrice
-        delete this.drinks[i];
+        this.totalCost -= this.drinks[i].drinkPrice;
+        (this.drinks).splice((this.drinks).indexOf(this.drinks[i]), 1);
         this.updateTab();
         return true;
       }
@@ -71,6 +71,15 @@ function addTabRemoveListener () {
   $("#currentTab").on("click", ".removeDrink", function() {
     var drinkName = (this.classList)[0];
     customerOrder.removeDrink(drinkName);
+  })
+}
+
+function updateCustomerInfoOnKeypress() {
+  $("#userInfo").find("input").keyup(function(){
+    customerOrder.firstName = $("#first-name").val();
+    customerOrder.lastName = $("#last-name").val();
+    customerOrder.phoneNumber = $("#phone-number").val();
+    customerOrder.dateOfBirth = $("#date-of-birth").val();
   })
 }
 
@@ -123,18 +132,25 @@ $(document).ready(function() {
     $("#customerSide").show();
     $("#selection").hide();
     $("#startOrder").show();
+    $("#sidenav").show();
     addSwitchListener();
   });
 
-
+  updateCustomerInfoOnKeypress();
   addTabRemoveListener();
 
 
 // Add Ready to Order Button
   $("#startOrder").click(function(){
-    $("#userInfo").toggle();
-    $("#orderButtons").show();
-    $("#startOrder").hide();
+    if (customerOrder.firstName && customerOrder.lastName){
+      $("#tab").show();
+      $("#orderButtons").show();
+      $("#startOrder").hide();
+    }else {
+      $("#userInfo").toggle();
+      $("#orderButtons").show();
+      $("#startOrder").hide();
+    }
   });
 
 
@@ -145,6 +161,13 @@ $(document).ready(function() {
     resetBoxes();
   });
 
+  $(".close").click(function(){
+    $("#userInfo").hide();
+    $("#orderButtons").hide();
+    $("#tab").hide();
+    $("#startOrder").show();
+
+  })
 
   $("#submitOrderButton").click(function() {
     customerOrder.updateInfo();
