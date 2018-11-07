@@ -42,6 +42,10 @@ input {
 .removeButton {
   font-size: 12px;
 }
+
+.readyButton {
+  font-size: 12px;
+}
 /*
 //////////////////////////
 //                      //
@@ -50,6 +54,18 @@ input {
 //        Chris         //
 //                      //
 ////////////////////////// */
+
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  vertical-align: middle;
+}
+
 video {
   display: inline-block;
   vertical-align: baseline;
@@ -82,7 +98,7 @@ video {
   margin: 0 auto 45px;
 }
 .video-wrapper h3 {
-  color: black;
+  color: #fff;
   position: absolute;
   top: 42%;
   font-size: 60px;
@@ -90,6 +106,16 @@ video {
   left: 0;
   right: 0;
 }
+
+#logo {
+  position: absolute;
+  top: 10%;
+  text-align: center;
+  left: 0;
+  right: 0;
+  height: 150px;
+}
+
 
 .drinkCard div div p {
   display: none;
