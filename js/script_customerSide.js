@@ -128,7 +128,7 @@ var customerOrder = new Order()
 $(document).ready(function() {
 
 
-  $("#customer").click(function(){
+  $("#customerPic").click(function(){
     $("#customerSide").show();
     $("#selection").hide();
     $("#versionNum").hide();

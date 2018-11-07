@@ -128,7 +128,7 @@ var testPassword = "password";
 
 $(function() {
 
-  $("#company").click(function(){
+  $("#companyPic").click(function(){
     $("#authenticate").show();
     $("#selection").hide();
     $("#versionNum").hide();
