@@ -21,7 +21,7 @@ Order.prototype.addDrink = function (drink) {
 Order.prototype.removeDrink = function(name) {
   for (var i =0; i < this.drinks.length; i++) {
     if (this.drinks[i]) {
-      if(this.drinks[i].drinkName === name) {
+      if((this.drinks[i].drinkName).split(" ")[0] === name) {
         this.totalCost -= this.drinks[i].drinkPrice
         delete this.drinks[i];
         this.updateTab();
@@ -91,7 +91,7 @@ Order.prototype.updateTab = function () {
   var output = "<ul>"
   this.drinks.forEach(function(drink){
     output += "<li class='tabLineItem'>" + drink.drinkName
-    output += "<button type='button' class='" + drink.drinkName + " removeDrink btn center btn-sm btn-danger'>    -    </button></li>"
+    output += "<button type='button' class='" + (drink.drinkName).split(" ")[0] + " removeDrink btn center btn-sm btn-danger'>    -    </button></li>"
   })
   output += "</ul>"
   output += "<p>Your total is: $" + this.totalCost + "</p>";
