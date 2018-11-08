@@ -135,9 +135,7 @@ function interpretDrinks() {
   for (var i = 0; i < input.length; i++) {
     if (input[i].checked) {
       var newDrink = new Drink(input[i].dataset.value2, parseFloat(input[i].value));
-        console.log(newDrink.drinkPrice);
       customerOrder.addDrink(newDrink);
-      console.log(customerOrder.totalCost);
     }
   }
 }
