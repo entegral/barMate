@@ -142,6 +142,8 @@ function addSwitchListener() {
     $("#customerSide").toggle();
     $("#companySide").toggle();
     $("#startOrder").toggle();
+    $(".fixed-nav-bar").toggle();
+
   });
 };
 
