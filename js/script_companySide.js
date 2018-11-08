@@ -132,7 +132,7 @@ $(function() {
     $("#authenticate").show();
     $("#selection").hide();
     $("#versionNum").hide();
-    $(".fixed-nav-bar").toggle();
+    $(".fixed-nav-bar").hide();
   })
 
   companyPage.ticketReadyClickListeners();
