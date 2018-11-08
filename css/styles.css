@@ -1,6 +1,4 @@
-body {
-  background-color: #eee;
-}
+
 
 #companySide {
   display: none;
@@ -59,6 +57,16 @@ input {
 //        Chris         //
 //                      //
 ////////////////////////// */
+
+#body {
+  background: url(../images/wood.jpg) no-repeat center
+  center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  content: '';
+  top: 0; left: 0; bottom: 0; right: 0;
+}
 
 .fixed-nav-bar {
   position: fixed;
