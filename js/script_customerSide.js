@@ -93,7 +93,8 @@ var chrisDrinkList = [
   ["images/drink/brothes.jpeg","Brother Thelonious","North Coast Brewing<br>9.40% ABV<br>$9.00","The beer is being released in conjunction with the Thelonious Monk Institute of Jazz, and the brewery will make a contribution to the Institute for every case sold to support jazz education.","beers","9.00","Brother Thelonious","brother-Thelonious"],
   ["images/drink/peach.jpeg","Peche 'n Brett","Logsdon Organic Farmhouse<br>10% ABV<br>$9.50","To his world-class oak-aged Seizoen Bretta (a funky, grassy, oaky saison beer) brewer Dave Logsdon adds a pound and a half of organic peaches per gallon, resulting in lush, ripe fruit flavors with an impressive kick.","beers","9.50","Peche","Peche"],
   ["images/drink/cascade.jpeg","Cascade Apricot","Cascade Barrel House <br>8.50% ABV<br>$6.75","Bright and hazy orange with a zingy, lemony tartness up front, this Belgian-style ale flows with waves of delicious, ripe apricot flavor.","beers","6.75","Apricot Sour","apricot-sour"],
-  ["images/drink/sweetheat.JPG","Sweet Heat","Burnside Brewing Co<br>4.90% ABV<br>$5.00","Lesser chile beers crash the palate party and leave. But Burnside’s is brewed with apricot purée and Scotch bonnet peppers, which supply a lingering, welcome heat.","beers","4.90","Sweet Heat","sweet-heat"]
+  ["images/drink/sweetheat.JPG","Sweet Heat","Burnside Brewing Co<br>4.90% ABV<br>$5.00","Lesser chile beers crash the palate party and leave. But Burnside’s is brewed with apricot purée and Scotch bonnet peppers, which supply a lingering, welcome heat.","beers","4.90","Sweet Heat","sweet-heat"],
+  
 ]
 
 Menu.prototype.generateMenu =  function () {
@@ -104,7 +105,6 @@ Menu.prototype.generateMenu =  function () {
       numOfColumns = 0;
       output += '</div><div class="row">'
     }
-
     output += '<div class="col-md-4"><div class="card drinkCard" style="width: 18rem;"><img class="card-img-top" src="';
     output += this.list[i].imagePath + '" alt="Card image cap"><div class="card-body"><div class="form-check"><h5 class="card-title">';
     output += this.list[i].cardTitle + '</h5><h6 class="card-subtitle mb-2 text-muted">';
