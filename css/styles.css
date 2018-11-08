@@ -201,6 +201,10 @@ input[type='checkbox'] {
    right: 0px;
    opacity: .9;
    overflow: scroll;
+   border: none;
+}
+.sideNavCard {
+  border: none;
 }
 
 #startOrder {
