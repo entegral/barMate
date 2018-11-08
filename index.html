@@ -4,6 +4,7 @@
 <head>
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Cinzel|Permanent+Marker|Ropa+Sans|Shadows+Into+Light" rel="stylesheet">
   <script src="js/jquery.js"></script>
   <script src="js/script_customerSide.js"></script>
   <script src="js/script_companySide.js"></script>
@@ -22,18 +23,20 @@
       </h3>
 </div>
     <div class="container" id="selection">
-      <p class ="lead text-center">
+      <p class ="lead text-center" id="explanation" >
         barMate offers an easy to use solution for handling a large volume of customer drink orders, improving service efficency, and provides an interpretable business side interface
       </p>
       <div class="content">
-        <h4 class="text-center">Which are you?</h4>
+        <h4 class="text-center" id="openQ">Which   are   you?</h4>
+        <br>
+
         <div class="row">
           <div class="col-sm-6">
             <figure>
               <img id="customerPic" src="images/bckgrnd/customers.jpg" class="img-responsive">
             </figure>
             <div>
-              <h3>Customer</h3>
+              <h3 class="head">Customer</h3>
               <p>With a sleek and easy to use interface simply select the beer of choice and a description of the beer will appear as it is added to your order. Don't want the beer? Simply unclick the beer</p>
               <p>
                 <br>
@@ -45,7 +48,7 @@
               <img id ="companyPic" src="images/bckgrnd/company.jpg" class="img-responsive">
             </figure>
             <div>
-              <h3>Company</h3>
+              <h3 class="head">Company</h3>
               <p>View all current drink tickets, open tabs, and inform users that their order is ready.</p>
               <p>
                 <br>
@@ -55,7 +58,7 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container" id="theRows">
       <div id="customerSide">
         <div class="container-fluid">
           <form id="form1" action="index.html" method="post">
@@ -95,7 +98,6 @@
                 </div>
               </div>
               <div id="orderButtons">
-                <button type="submit" class="btn btn-outline-info" name="button" id="addOrder">Add to Order</button>
                 <button type="button" class="btn btn-outline-info" name="button" id="submitOrderButton">Submit order</button>
               </div>
             </div>

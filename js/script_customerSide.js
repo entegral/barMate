@@ -130,9 +130,14 @@ Order.prototype.updateInfo = function () {
 
 function interpretDrinks() {
   var input = $('input[name="beers"]:checked');
+  customerOrder.drinks = [];
+  customerOrder.totalCost = 0;
   for (var i = 0; i < input.length; i++) {
     if (input[i].checked) {
-      customerOrder.addDrink(new Drink(input[i].dataset.value2, parseFloat(input[i].value)))
+      var newDrink = new Drink(input[i].dataset.value2, parseFloat(input[i].value));
+        console.log(newDrink.drinkPrice);
+      customerOrder.addDrink(newDrink);
+      console.log(customerOrder.totalCost);
     }
   }
 }
@@ -143,6 +148,8 @@ function addSwitchListener() {
     $("#companySide").toggle();
     $("#startOrder").toggle();
     $(".fixed-nav-bar").toggle();
+    $("#sidenav").hide();
+
 
   });
 };
@@ -153,6 +160,8 @@ function addTabRemoveListener () {
     customerOrder.removeDrink(drinkName);
   })
 }
+
+
 
 function updateCustomerInfoOnKeypress() {
   $("#userInfo").find("input").keyup(function(){
@@ -171,7 +180,6 @@ Order.prototype.updateTab = function () {
   var output = "<ul>"
   this.drinks.forEach(function(drink){
     output += "<li class='tabLineItem'>" + drink.drinkName
-    output += "<button type='button' class='" + (drink.drinkName).split(" ")[0] + " removeDrink btn center btn-sm btn-danger'>    -    </button></li>"
   })
   output += "</ul>"
   output += "<p>Your total is: $" + this.totalCost + "</p>";
@@ -242,13 +250,6 @@ $(document).ready(function() {
   });
 
 
-  $("#addOrder").click(function(){
-    $("#userInfo").hide();
-    $("#tab").show();
-    interpretDrinks();
-    resetBoxes();
-  });
-
   $(".close").click(function(){
     $("#userInfo").hide();
     $("#orderButtons").hide();
@@ -263,9 +264,11 @@ $(document).ready(function() {
     ticketManager.addTicket(customerOrder.clone());
     customerOrder.clearOrder();
     resetNameField();
+    resetBoxes();
     $("#tab").hide();
     $("#orderButtons").hide();
-    $("#startOrder").show();
+    $("#startOrder").show
+    $("#userInfo").hide();
   });
 
 
@@ -273,8 +276,16 @@ $(document).ready(function() {
     e.stopPropagation();
     var checkbox = $(this).find('input[type="checkbox"]');
     checkbox.prop('checked', !checkbox.prop('checked'));
-    $(this).toggleClass("overlayColor")
+    $(this).toggleClass("overlayColor");
     $(this).find("p").slideToggle();
+    $("#userInfo").show();
+    $("#tab").show();
+    $("#orderButtons").show();
+    $("#startOrder").show();
+    $("#sidenav").show();
+
+    interpretDrinks();
+    customerOrder.updateTab();
   });
 
 });
