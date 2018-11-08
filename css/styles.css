@@ -60,9 +60,14 @@ input {
 //        Chris         //
 //                      //
 ////////////////////////// */
+.body {
+  padding: 15px;
+  border-radius: 10px;
+  background-color: black;
+  -webkit-filter: opacity(50%);
+}
 
 .head {
-
   border-radius: 10px;
   background-color: black;
   -webkit-filter: opacity(50%);
@@ -70,7 +75,6 @@ input {
 #openQ {
   font-family: 'Permanent Marker', cursive;
   font-size: 72px;
-
   font-style: italic;
   font-weight: bold;
   color: white;
@@ -101,7 +105,7 @@ input {
 }
 
 
-p {
+p, h3 {
   font-family: 'Ropa Sans', sans-serif;
   color: lightgrey;
 }
