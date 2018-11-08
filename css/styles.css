@@ -68,12 +68,13 @@ input {
   z-index: 9999;
   width: 100%;
   height: 50px;
-  background-color: #EEEEEE;
+  background-color: black;
 }
 
 
 
 #companyPic{
+    border-radius: 15px;
    -webkit-filter: brightness(100%);
 }
 #companyPic:hover {
@@ -86,6 +87,7 @@ input {
     transition: all 0.5s ease;
 }
 #customerPic{
+    border-radius: 15px;
    -webkit-filter: brightness(100%);
 }
 #customerPic:hover {
@@ -183,6 +185,10 @@ input[type='checkbox'] {
   overflow: hidden;
 }
 
+#useless {
+  border: 0px;
+}
+
 #sidenav  {
   display: none;
   position: fixed;
@@ -191,7 +197,7 @@ input[type='checkbox'] {
    width: auto;
    height: auto;
    z-index: 100;
-   bottom: 46px;
+   bottom: 45px;
    right: 0px;
    opacity: .9;
    overflow: scroll;
@@ -216,7 +222,8 @@ input[type='checkbox'] {
 
 
 #userInfo {
-  display:none;
+
+  display: none;
   text-align: center;
 }
 
