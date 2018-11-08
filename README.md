@@ -13,6 +13,11 @@ _An app to help people place orders and help businesses maintain an efficient wo
 * _Open the html file in your Web Browser_
 * _Open file in Atom_
 
+## barMate in Action
+
+![Home Screen](images/home-screen.png)
+![Customer Side](images/customer-screen.png)
+
 ## Specifications
 
 - [x] Create drink object with name and price
