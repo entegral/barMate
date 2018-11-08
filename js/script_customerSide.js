@@ -56,6 +56,25 @@ Order.prototype.clearOrder = function() {
 
 //  UI Logic ------------  UI Logic ------------  UI Logic ------------  UI Logic
 
+function MenuItem(array) {
+  this.imagePath = array[0],
+  this.cardTitle = array[1],
+  this.cardSubtitle = array[2],
+  this.cardText = array[3],
+  this.cardName = array[4],
+  this.cardPrice = array[5],
+  this.dataValue2 = array[6],
+  this.labelFor = array[7]
+}
+
+function Menu() {
+  this.list = [];
+}
+
+Menu.prototype.updateList = function (menuItem){
+  this.list.push(menuItem);
+}
+
 var chrisDrinkList = [
   ["images/drink/pbr.jpeg","PBR","Pabst Brewing Company<br>4.74% ABV<br>$2.00","Pabst Blue Ribbon is brewed in the finest traditions of an American Premium Lager dating back to 1844. Brewed with a combination of 2 & 6-row malted barley, select cereal grains and American and European hops, Pabst Blue Ribbon is fermented with a proprietary lager yeast.", "beers","2.00","PBR","PBR"],
   ["images/drink/tecatejpg.jpg","Tecate","FEMSA - Cuauhtémoc-Moctezuma (Heineken) <br>4.60% ABV<br>$2.00","A Lager beer with a delicious aroma of malt and hops and a delicate balance in its subtle refreshing taste.","beers","2.00","Tecate","Tecate"],
@@ -75,23 +94,33 @@ var chrisDrinkList = [
   ["images/drink/brothes.jpeg","Brother Thelonious","North Coast Brewing<br>9.40% ABV<br>$9.00","The beer is being released in conjunction with the Thelonious Monk Institute of Jazz, and the brewery will make a contribution to the Institute for every case sold to support jazz education.","beers","9.00","Brother Thelonious","brother-Thelonious"],
   ["images/drink/peach.jpeg","Peche 'n Brett","Logsdon Organic Farmhouse<br>10% ABV<br>$9.50","To his world-class oak-aged Seizoen Bretta (a funky, grassy, oaky saison beer) brewer Dave Logsdon adds a pound and a half of organic peaches per gallon, resulting in lush, ripe fruit flavors with an impressive kick.","beers","9.50","Peche","Peche"],
   ["images/drink/cascade.jpeg","Cascade Apricot","Cascade Barrel House <br>8.50% ABV<br>$6.75","Bright and hazy orange with a zingy, lemony tartness up front, this Belgian-style ale flows with waves of delicious, ripe apricot flavor.","beers","6.75","Apricot Sour","apricot-sour"],
-  ["images/drink/sweetheat.JPG","Sweet Heat","Burnside Brewing Co<br>4.90% ABV<br>$5.00","Lesser chile beers crash the palate party and leave. But Burnside’s is brewed with apricot purée and Scotch bonnet peppers, which supply a lingering, welcome heat.","beers","4.90","Sweet Heat","sweet-heat"],
-  ["","","","","","","",""],
+  ["images/drink/sweetheat.JPG","Sweet Heat","Burnside Brewing Co<br>4.90% ABV<br>$5.00","Lesser chile beers crash the palate party and leave. But Burnside’s is brewed with apricot purée and Scotch bonnet peppers, which supply a lingering, welcome heat.","beers","4.90","Sweet Heat","sweet-heat"]
 ]
 
-function DrinkCardManager (arrayOfDrinkData) {
-  this.drinks = arrayOfDrinkData;
-}
+Menu.prototype.generateMenu =  function () {
+  var output = '<div class="row">';
+  var numOfColumns = 0;
+  for (var i = 0; i < this.list.length; i++){
+    if (numOfColumns > 2){
+      numOfColumns = 0;
+      output += '</div><div class="row">'
+    }
 
-DrinkCardManager.prototype.generateMenu =  function () {
-  var output = "";
-
-  for (var i = 0; i > this.drinks.length; i++){
-
+    output += '<div class="col-md-4"><div class="card drinkCard" style="width: 18rem;"><img class="card-img-top" src="';
+    output += this.list[i].imagePath + '" alt="Card image cap"><div class="card-body"><div class="form-check"><h5 class="card-title">';
+    output += this.list[i].cardTitle + '</h5><h6 class="card-subtitle mb-2 text-muted">';
+    output += this.list[i].cardSubtitle + '</h6><p class="card-text">';
+    output += this.list[i].cardText + '</p><input class="form-check-input" type="checkbox" name="';
+    output += this.list[i].cardName + '" value="';
+    output += this.list[i].cardPrice + '" data-value2="';
+    output += this.list[i].dataValue2 + '"><label class="form-check-label" for="';
+    output += this.list[i].labelFor + '">Click to add to order!</label></div></div></div></div>';
+    numOfColumns++;
   }
-
+  output += '</div>';
   return output;
 }
+
 
 Order.prototype.updateInfo = function () {
   this.firstName = $("#first-name").val();
@@ -163,10 +192,23 @@ function resetNameField() {
   $("#date-of-birth").val("");
 };
 
-var customerOrder = new Order()
+function importDrinks(array){
+  for (var i = 0; i < array.length; i++){
+    menu.updateList(new MenuItem(array[i]))
+  }
+}
+
+var customerOrder = new Order();
+var menu = new Menu();
+
 
 $(document).ready(function() {
 
+  importDrinks(chrisDrinkList);
+
+  var htmlOutput = menu.generateMenu()
+  console.log(htmlOutput);
+  $("#form1").html(htmlOutput)
 
   $("#customerPic").click(function(){
     $("#customerSide").show();
