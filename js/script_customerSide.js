@@ -216,6 +216,7 @@ $(document).ready(function() {
     $("#versionNum").hide();
     $("#startOrder").show();
     $("#sidenav").hide();
+    $(".fixed-nav-bar").show();
     addSwitchListener();
   });
 
