@@ -60,7 +60,24 @@ input {
 //                      //
 ////////////////////////// */
 
+<<<<<<< HEAD
+=======
+.fixed-nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 50px;
+  background-color: #EEEEEE;
+}
+
+
+>>>>>>> cr_styling_wed
+
 #companyPic{
+    border-radius: 15px;
    -webkit-filter: brightness(100%);
 }
 #companyPic:hover {
@@ -73,6 +90,7 @@ input {
     transition: all 0.5s ease;
 }
 #customerPic{
+    border-radius: 15px;
    -webkit-filter: brightness(100%);
 }
 #customerPic:hover {
@@ -178,7 +196,7 @@ input[type='checkbox'] {
    width: auto;
    height: auto;
    z-index: 100;
-   bottom: 0px;
+   bottom: 46px;
    right: 0px;
    opacity: .9;
    overflow: scroll;
@@ -187,16 +205,18 @@ input[type='checkbox'] {
 #startOrder {
   display: none;
   position: fixed;
-  bottom: 50px;
+  bottom: 5px;
   right: 100px;
   z-index: 99;
-  padding: 8px;
+  padding: 3px;
   font-size: 20px;
   background: #FFF;
   border-radius: 5px;
   text-transform: uppercase;
   line-height: 14px;
   cursor: pointer;
+  width: 100px;
+  height: 32px;
 }
 
 
