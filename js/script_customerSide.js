@@ -208,7 +208,6 @@ $(document).ready(function() {
   importDrinks(chrisDrinkList);
 
   var htmlOutput = menu.generateMenu()
-  console.log(htmlOutput);
   $("#form1").html(htmlOutput)
 
   $("#customerPic").click(function(){
@@ -216,7 +215,7 @@ $(document).ready(function() {
     $("#selection").hide();
     $("#versionNum").hide();
     $("#startOrder").show();
-    $("#sidenav").show();
+    $("#sidenav").hide();
     addSwitchListener();
   });
 
@@ -230,10 +229,14 @@ $(document).ready(function() {
       $("#tab").show();
       $("#orderButtons").show();
       $("#startOrder").hide();
+      $("#sidenav").show();
+
     }else {
       $("#userInfo").toggle();
       $("#orderButtons").show();
       $("#startOrder").hide();
+      $("#sidenav").show();
+
     }
   });
 
@@ -250,6 +253,7 @@ $(document).ready(function() {
     $("#orderButtons").hide();
     $("#tab").hide();
     $("#startOrder").show();
+    $("#sidenav").hide();
 
   })
 
