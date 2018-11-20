@@ -1,10 +1,8 @@
 ![barMate Logo](images/logo.png)
 
-<<<<<<< HEAD
+
 #### By _**Robert Bruce, Rohan Moore, Ngan Nguyen, Chris Rudnicky, Rubin Stricklin**_
-=======
-#### By _**Robert Bruce, Rohan Moore, Ngan Nguyen, Chris Rudnicky**_
->>>>>>> 3360b657682d6f017e33ba5557296a7823215ebb
+
 
 ## Description
 
@@ -20,8 +18,13 @@ _An app to help people place orders and help businesses maintain an efficient wo
 ## barMate in Action
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ![Customer Side](public/images/customer-screen.png)
 ![Home Screen](public/images/home-screen.png)
+=======
+![Home Screen](images/home-screen.png)
+![Customer Side](images/customer-screen.png)
+>>>>>>> 3360b657682d6f017e33ba5557296a7823215ebb
 =======
 ![Home Screen](images/home-screen.png)
 ![Customer Side](images/customer-screen.png)
@@ -119,7 +122,5 @@ _GitHub, HTML, CSS, Bootstrap, Javascript, JQuery_
 
 ### License
 <<<<<<< HEAD
+<<<<<<< HEAD
 Copyright (c) 2018 **_RB RS RM NN CR_** GNU General Public License 3.0
-=======
-Copyright (c) 2018 **_RB RM NN CR_** GNU General Public License 3.0
->>>>>>> 3360b657682d6f017e33ba5557296a7823215ebb
