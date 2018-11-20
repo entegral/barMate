@@ -25,3 +25,4 @@ class BitcoinRPC
   
     class JSONRPCError < RuntimeError; end
   end
+
