@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM ruby:alpine
 
 # Install base packages
 RUN apk update && apk upgrade

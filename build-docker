@@ -3,4 +3,4 @@ docker run -it \
     -p 8787:8787 \
     --name barmate \
     --mount source=barMate,target=/data-warehouse \
-    barmate:current 
+    barmate:current /bin/bash 
