@@ -1,7 +1,7 @@
 ![barMate Logo](public/images/logo.png)
 
 
-#### By _**Robert Bruce, Rohan Moore, Ngan Nguyen, Chris Rudnicky, Rubin Stricklin**_
+#### By _**Robert Bruce, Rohan Moore, Ngan Nguyen, Chris Rudnicky**_
 
 
 ## Description
@@ -113,4 +113,4 @@ _GitHub, HTML, CSS, Bootstrap, Javascript, JQuery_
 
 ### License
 
-Copyright (c) 2018 **_RB RS RM NN CR_** GNU General Public License 3.0
+Copyright (c) 2018 **_RB RM NN CR_** GNU General Public License 3.0
